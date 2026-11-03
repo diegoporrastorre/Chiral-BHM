@@ -1,0 +1,389 @@
+                               PHYSICAL REVIEW LETTERS 135, 203603 (2025)
+
+
+
+    Emerging Non-Hermitian Topology in a Chiral-Driven-Dissipative Bose-Hubbard Model
+                    Laszlo Rassaert ,1,* Tomás Ramos ,2 Tommaso Roscilde,1 and Diego Porras                    2,†
+                         1
+                           Laboratory of Physics, University of Lyon, Ens de Lyon, CNRS, Lyon, France
+                     2
+                      Instituto de Física Fundamental IFF-CSIC, Calle Serrano 113b, 28006 Madrid, Spain
+
+        (Received 25 November 2024; revised 22 September 2025; accepted 16 October 2025; published 13 November 2025)
+
+                We introduce a driven-dissipative Bose-Hubbard chain describing coupled lossy photonic modes, in
+             which time-reversal symmetry is broken by a coherent drive with a uniform phase gradient. We investigate
+             this model by means of a Gaussian variational ansatz and numerically prove that the steady-state solution is
+             stabilized by an inhomogeneous profile of the driving amplitude, which damps out boundary effects. Our
+             calculations unveil a nonequilibrium phase diagram showing low- and high-density phases for photons
+             separated by a phase coexistence region in which the system exhibits the phenomenon of topological
+             amplification and is characterized by a finite non-Hermitian winding number. Our Letter shows the
+             emergence of non-Hermitian topological phases in an interacting model that can be naturally implemented
+             with superconducting circuits.
+
+             DOI: 10.1103/w32k-x3l5
+
+
+
+   Introduction—The study of topology in condensed matter            formation [20]. Driven-dissipative Bose-Hubbard chains
+physics has unveiled a plethora of exciting phenomena like           and lattices can be naturally implemented in the quantum
+the quantum Hall effect [1] and topological insulators with          limit of small photon occupations using superconducting
+time-reversal symmetry [2,3]. Topological order in fer-              circuits [28,29], where strong-interaction effects [30], and
+mionic systems can also appear in the presence of dissipa-           even a dissipative quantum phase transition, have been
+tion [4]. In the field of topological photonics [5–8], light         experimentally observed [31]. Other implementations are
+propagation is controlled by topological effects leading to          microcavity polaritons [32], trapped ions [33,34], and
+applications such as photon routing [9] and directional              ultracold atoms [35–37] and molecules [38].
+amplifiers [10,11]. Photonic setups are inherently open                  A natural path to induce topological phases in quantum
+quantum systems subjected to photon loss and gain proc-              driven-dissipative systems is to break the time-reversal
+esses, similarly to other bosonic systems like polaritons [12],      symmetry. This approach has been recently pursued with
+and vibrational [13] or phononic lattices [13,14]. Topology          the study of incoherently or parametrically driven linear
+in bosonic systems is often studied at the single-particle or        photonic lattices [11,39–42], leading to the discovery of
+semiclassical level, but less is known about the interplay           topological amplification. This phenomenon is intimately
+between topology, interactions, and dissipation.                     linked to non-Hermitian topology, since a non-Hermitian
+   Driven-dissipative systems [15,16] are ideal candidates           dynamical matrix governs linear dissipative systems [43,44];
+for the study of such an interplay and, in particular, Bose-         it is related to so-called point-gap topology [42,45]; and it
+                                                                     manifests itself as a directional amplification of input signals.
+Hubbard driven-dissipative lattices [17,18] have been
+                                                                         In this Letter, we study a dissipative Bose-Hubbard chain
+extensively investigated. This model consists of nonlinear
+                                                                     in which time-reversal symmetry is broken by adding a site-
+photonic modes coupled by hopping terms and subject to
+                                                                     dependent phase to the coherent drive. We explore the
+both photon loss and coherent driving by an external field.          emergence of non-Hermitian topological amplification
+They have been addressed by theoretical methods such as              phases via the interplay between interactions and dissipa-
+the coherent-state ansatz [19,20]; the Gutzwiller ansatz [21];       tion. Our theoretical description is based on a Gaussian
+the truncated Wigner approximation [22]; Keldysh path-               variational ansatz to approximate the density matrix [46,47].
+integral techniques [23,24]; and the corner renormalization          Our main results are (i) stable steady-state solutions can
+group method [25], showing a nonequilibrium phase dia-               be achieved by using an inhomogeneous profile for the
+gram with a first-order phase transition between high- and           coherent drive that smoothens boundary effects; (ii) the
+low-density phases as a function of the driving strength.            nonequilibrium phase diagram is divided into low- and high-
+More recent works have explored critical slowing down                density phases separated by a phase coexistence region—in
+[22], entanglement [26], quantum chaos [27], and pattern             the latter, the system exhibits non-Hermitian topology and
+                                                                     topological amplification properties; (iii) within the phase
+                                                                     coexistence region, fluctuations build up at the frontier
+    *
+     Contact author: laszlo.rassaert@ens-lyon.fr                     between topological and trivial phases; and (iv) correlations
+    †
+     Contact author: diego.porras@csic.es                            between sites are enhanced at the topological phase.
+
+0031-9007=25=135(20)=203603(6)                               203603-1                         © 2025 American Physical Society
+                                        PHYSICAL REVIEW LETTERS 135, 203603 (2025)
+
+  Driven-dissipative Bose-Hubbard model—We consider                Hereafter, we shall mostly focus on steady-state properties,
+N nonlinear photonic modes forming a chain and described           i.e., on ρ⋆ such that Lðρ⋆ Þ ¼ 0. The model in Eqs. (1) and
+by annihilation (creation) operators aj (a†j ), whose unitary      (2) has been investigated theoretically in [27] for a ring of
+dynamics is governed by the Hamiltonian                            N ¼ 3 cavities. Here, we show that an open chain with
+                                                                   N ≫ 1 leads to an entirely new phenomenology related to
+         X
+         N                     X
+                               N −1                              topology.
+  Ha ¼         Δj a†j aj þ J         a†jþ1 aj þ a†j ajþ1              Gaussian ansatz—Integrating the quantum evolution
+         j¼1                   j¼1                                 described by Eq. (2) is challenging. However, in the limit
+               X
+               N              X
+                              N                                  of weak nonlinearities, a Gaussian ansatz is a good
+         þU      ða†j aj Þ2 þ   ϵj aj eiψ j þ a†j e−iψ j ;   ð1Þ   approximation to the exact steady state of the system
+                j¼1               j¼1                              [46,48]. We start by defining time-dependent mean values
+                                                                   αj ðtÞ ¼ haj ðtÞi and fluctuation operators bj ¼ aj − αj ðtÞ
+where Δj are local mode energies, J is a uniform photonic          fulfilling hbj i ¼ 0. Specifically, we write equations of
+hopping rate, ϕ is a constant hopping complex phase,               motion for αj and correlators Gjk ¼ hb†j bk i and
+and U is a local nonlinearity. A coherent drive acts
+                                                                   Fjk ¼ hbj bk i, fully specifying a Gaussian state. This
+over the array with local amplitude ϵj and site-dependent
+                                                                   is a convenient basis for direct application of Wick’s
+phase ψ j . The latter is assumed to depend linearly on the
+                                                                   theorem on correlators of the form hB1 B2 B3 B4 i ¼
+site position ψ j ¼ jϕ. The gauge transformation aj →              hB1 B2 ihB3 B4 i þ hB1 B3 ihB2 B4 i þ hB1 B4 ihB2 B3 i, with
+aj e−iψ j amounts to the substitution a†jþ1 aj þ a†j ajþ1 →        Bj ¼ bj or b†j . The ansatz has some desirable properties
+a†jþ1 aj eiϕ þ a†j ajþ1 e−iϕ , such that the constant coherent     that have been proven in the case of closed quantum
+drive gradient results in a synthetic gauge field for              systems; namely, Gaussian states form a so-called Kähler
+photons. In the following, we will work in this gauge.             manifold, which implies that equations of motion can be
+Note that this term is analogous to the constant phase             derived consistently from variational principles [47,48].
+acquired by electrons in the presence of a magnetic field          The master equation in Eq. (2) can be viewed as the
+after the Peierls substitution, whereas an electric field          system’s reduced-state evolution resulting from the joint
+would result on a time-dependent phase.                            unitary dynamics of the system plus bath. Applying a
+   The whole quantum dynamics of the chain is determined           Gaussian ansatz to such a joint dynamics corresponds
+by a master equation which also includes photon decay:             exactly to our approximation, since the reduced state of a
+                                                                   Gaussian state is also Gaussian. Hence, in the case of a
+                       κ X                              
+LðρÞ ¼ −i½Ha ; ρ þ         2aj ρa†j − a†j aj ρ − ρa†j aj : ð2Þ    Markovian bath, the Gaussian ansatz applied to dissipative
+                       2 j                                         dynamics enjoys the same properties as those for unitary
+                                                                   dynamics (see Supplemental Material [49] for details).
+Photon decay is an essential process in our model, which              Applying Wick’s theorem to the Heisenberg equations of
+otherwise would fail to produce a stable steady state.             motion, one gets
+
+
+ dαj                                                                                     κ
+     ¼ −i ϵj þ ðΔj þ UÞαj þ 2Uðjαj j2 αj þ 2αj Gjj þ αj Fjj Þ þ Jðαjþ1 e−iϕ þ αj−1 eiϕ Þ − αj ;
+  dt                                                                                       2
+dGjk        2                                                                                 κ
+     ¼ iU 2ðαj Þ Fjk þ 4jαj j2 Gjk þ 2Fjk Fjj þ 4Gjj Gjk þ iΔj Gjk þ iJðGj−1k − Gjkþ1 Þe−iϕ − Gjk þ ðj ↔ kÞ ;
+ dt                                                                                              2
+dFjk                                                                           
+     ¼ −iU 4jαk j2 Fjk þ 2α2j Gjk þ 4Gjj Fjk þ 2Gkj Fkk þ Fjk þ δjk ðα2j þ Fjj Þ − iΔj Fjk
+ dt
+                                      κ
+       − iJðFjkþ1 e−iϕ þ Fjk−1 eiϕ Þ − Fjk þ ðj ↔ kÞ:                                                                       ð3Þ
+                                      2
+
+
+In Supplemental Material [49], we benchmark the Gaussian           steady state is close to Gaussian. The above condition is
+ansatz results with exact ones for a single site. Extending        met by our results; see Supplemental Material [49].
+the comparison to larger systems is prohibitive due to the            Stability diagram—We have numerically integrated
+large size of the local Hilbert space. However, the Gaussian       Eq. (3) with a homogeneous profile for the driving
+ansatz is expected to be valid as long as hb†j bj i=jαj j2 ≪ 1.    amplitude jϵj j ¼ ϵ and detuning Δj ¼ Δ and obtained that,
+Indeed, in this limit, Ha can be approximated by a quadratic       in most of the phase diagram, the system exhibits persistent
+Hamiltonian in terms of fluctuation operators, such that the       fluctuations at long times and fails to reach a steady state.
+
+
+                                                             203603-2
+                                     PHYSICAL REVIEW LETTERS 135, 203603 (2025)
+
+
+
+
+FIG. 1. Long-time limit of αj obtained with (a) a homogeneous
+profile (ϵj ¼ ϵ) and (b) the inhomogeneous profile in Eq. (4). The
+gray area in (a) refers to the range of values that αj takes in the
+oscillating long-time dynamics. Dashed red and green lines refer
+to profiles of ϵj and Δj , respectively. N ¼ 40, ϕ ¼ π=3, κ=J ¼ 1,
+and U=J ¼ −2 × 10−4 .
+
+
+Oscillatory solutions may indicate the presence of
+Liouvillian modes with a vanishing real part in the                   FIG. 2.P Phase diagram of (a) mean displacement value jα⋆ j2 ¼
+thermodynamic limit [50]. This happens even though                    ð1=NÞ Nj¼1 jα⋆j j2 and (b) maximum value of fluctuations,
+κ ≠ 0 in all our calculations. We have found that an                  hb†j bj i⋆ , in the chain. (c),(d) Steady-state profile of the chain
+inhomogeneous profile of the amplitude (ϵj ) and local                jα⋆j j2 and hb†j bj i⋆ for phases I (orange, low density), II (blue,
+drive detuning Δj in which these quantities are suppressed            coexistence), and III (green, high density), whereas N ¼ 40,
+toward the ends of the chain attenuates the effect of open            Δ=J ¼ 0.5, ϕ ¼ π=3, κ=J ¼ 1, and U=J ¼ −2 × 10−4 .
+boundaries and stabilizes the steady state [51]. Throughout
+the Letter, we choose, for j ≤ N=2,                                   spatial profiles of the mean values and Gaussian fluctua-
+                                                                      tions in the chain in the three regions of the phase diagram.
+         ϵj ¼ ϵtanhðj=N 0 Þ;      Δj ¼ Δtanh2 ðj=N 0 Þ;        ð4Þ    Orange and green curves correspond to low-density (region
+                                                                      I) and high-density (region III) phases. Coexistence region
+and a mirror-reflected pattern for j > N=2. N 0 in Eq. (4) is         II (blue curves) shows a strong inhomogeneous photon
+the size of the border region. These smooth boundary                  density profile with large fluctuations. Below, we character-
+conditions produce stable solutions in a larger region of             ize quantitatively this phase in terms of non-Hermitian
+the nonequilibrium phase diagram, such that αj ðtÞ converge           topology.
+toward a steady-state value, αj ðt → ∞Þ ¼ α⋆j . Figure 1                 Topology in the phase coexistence region—The obtained
+shows a typical comparison between solutions with (a) homo-           nonequilibrium phase diagram can be understood under the
+geneous drive (i.e., sharp boundary conditions) and (b) the           lens of topological amplification theory. In the limit of
+smoothened boundary conditions, showing the stabilization             weak nonlinearities, the Hamiltonian part of the dynamics
+of the steady state (further examples in Supplemental                 of the bj fields at long times is governed by the following
+Material [49]).                                                       effective Hamiltonian (to quadratic order in the bj ; b†j
+   Nonequilibrium steady-state phase diagram—We focus
+                                                                      operators):
+on a regime of weak nonlinearities jUj ≪ ϵj , where the
+Gaussian ansatz is more accurate. This condition is also
+easily met in experimental implementations, where non-                                X             X
+                                                                                                    N                
+linearities are typically small. Figures 2(a) and 2(b) show                    Hb ≈    Δ̃j b†j bj þ     gj b†2    2
+                                                                                                            j þ gj bj
+the calculated phase diagram. In Fig. 2(a), we recognize a                              j                 j¼1
+low-density region phase (I). The rest of the phase diagram                                 X
+                                                                                            N −1                                
+comprises a high-density region (III) and a coexistence                                þJ            b†jþ1 bj eiϕ þ b†j bjþ1 e−iϕ ;   ð5Þ
+region (II), a division that is not apparent in Fig. 2(a) but                               j¼1
+will become evident below. This phase diagram is in sheer
+contrast with the ϕ ¼ 0 case (see Supplemental Material
+                                                                      with the linear term vanishing from the hbj i ¼ 0 condition,
+[49]). Finally, the gray area is a chaotic region in which the
+long-time behavior of the Gaussian ansatz does not con-               and Δ̃j ¼ Δj þ 4Ujα⋆j j2 þ U, gj ¼ Uðα⋆j Þ2 . H b describes
+verge to a steady-state solution. Figure 2(b) shows that              fluctuations around the background provided by the coher-
+fluctuations are enhanced at the critical line separating I and       ent state component of the Gaussian ansatz. We emphasize
+II and remain large within region II, which is in contrast            that, even if U takes small values, the corrections to Hb are
+with the ϕ ¼ 0 case; see Supplemental Material [49].                  of the order of Ujαj j2 and can become comparable to J
+Figures 2(c) and 2(d) show the evolution of steady-state              and κ.
+
+                                                               203603-3
+                                          PHYSICAL REVIEW LETTERS 135, 203603 (2025)
+
+                                                                               where HðkÞ is the Fourier transform of the non-Hermitian
+                                                                               matrix H and we assume an homogeneous system. In [42],
+                                                                               it was shown that nonzero values of ν lead to the chain
+                                                                               entering in a regime of directional amplification, which
+                                                                               imply large elements of the zero-frequency Green’s func-
+                                                                               tion, G ¼ −H−1 . ν is also related to non-Hermitian point-gap
+                                                                               topology [44] (see Supplemental Material [49] for details).
+                                                                                  Let us focus now on the transition between low- and
+                                                                               high-boson density phases in region II of the phase
+                                                                               diagram. The coexistence region is bounded by values
+                                                                               ϵc;1 and ϵc;2 of the coherent drive as we increase ϵ along
+                                                                               lines of constant Δ. In Figs. 3(b)–3(d), we show the
+                                                                               evolution of density profiles as we move along the line
+                                                                               in Fig. 2(a). The chain is divided into two spatial regions of
+                                                                               high- and low-boson densities, separated by an interface
+                                                                               with large of fluctuations. The interface moves from right to
+                                                                               left as we ramp up the value of ϵ. The topological trivial
+                                                                               case ϕ ¼ 0, shown in Fig. 3(a) for comparison, does not
+                                                                               show those spatial features. A topological characterization
+                                                                               can be achieved by using the definition in Eq. (7). In a
+                                                                               homogeneous system, H is parametrized by constant values
+                                                                               gj ¼ g, J, and Δj ¼ Δ and the winding number is a
+                                                                               function νðg; J; ΔÞ. In order to characterize spatial regions
+                                                                               in our inhomogeneous system, we define the function νj ¼
+                                                                               νðgj ; J; Δ̃j Þ with the local Hamiltonian parameters. This
+                                                                               local definition of a winding number is correct in a
+                                                                               quasihomogeneous limit in which parameters vary slowly
+                                                                               in space. We highlight that νj is implicitly dependent on ϵj ,
+FIG. 3. Steady-state profile of the chain: (a) for ϕ ¼ 0, ϵ=J ¼
+70 and (b)–(d) for ϕ ¼ π=3 and three values of ϵ=J ¼ 39.8, 40.5,               since it depends on α⋆j through the relations below Eq. (5)
+and 42. (e) Profile of jα⋆j j2 when ϵ is varied for ϕ ¼ 0 and                  and the steady-state value α⋆j is determined by ϵj. Different
+(f) profile of jα⋆j j2 , (g) fluctuations hb†j bj i⋆ , and (h) local winding   values of νj across the chain imply coexistence of different
+number νj when ϵ is varied along a line of constant Δ=J on the                 topological phases, as we show below.
+phase diagram in Fig. 2(a), whereas N ¼ 40, Δ=J ¼ 0.5,                            As we modify ϵ along a constant Δ line, we find (i) for
+ϕ ¼ π=3, κ=J ¼ 1, and U=J ¼ −2 × 10−4 .                                        ϵ < ϵc;1 (region I), a low-density phase with a spatially
+                                                                               homogeneous density profile and νj ¼ 0. (ii) ϵ ¼ ϵc;1 marks
+                                                                               the onset of topological amplification [see Fig. 3(b)]
+   To reveal the link with non-Hermitian physics, we define                    and the transition between phases I and II. At this critical
+the set of 2N fluctuation operators in the Nambu basis,                        point, νj ¼ 1 for all j’s except for the edges of the chain. At
+bμð¼jÞ ¼ bj (if μ ¼ 1; …; N) and bμð¼jþNÞ ¼ b†j (if μ ¼                        this point, corrections induced by interactions take signifi-
+N þ 1; …; 2N). In an input-output formalism [40,42], the                       cant values, gj =J ≈ 0.4, ðΔ̃j − Δj Þ=J ≈ 1.6. (iii) ϵc;2 > ϵ > ϵc;1
+                                              P                                is a phase coexistence region in which the chain is divided
+linear response of these operators is ḃμ ¼ −i ν Hμν bν þ
+                                                                               into a low-density, topological spatial region with νj ¼ 1
+Fμ , with Fμ representing input fields and
+                                                                               and a high-density topologically trivial region with νj ¼ 0;
+                                                                             see Figs. 3(c) and 3(d). The topological and trivial spatial
+                          D − i 2κ 1          K                                regions are separated by a moving edge with large fluctua-
+                H¼                                       ;             ð6Þ
+                            −K         −D − i 2κ 1;                          tions of the bosonic field. This numerical result agrees with
+                                                                               previous works that predict the accumulation of bosons at
+with      Djk ¼ Δj δjk þ Jðδj;k−1 eiϕ þ e−iϕ δj;kþ1 Þ  and                     the edge of nonreciprocal quantum chains [40,52]. The
+K jk ¼ 2gj δjk . We characterize the topology properties of                    continuous evolution and phase coexistence are clearly seen
+                                                                               in Fig 3(f), whereas such phase coexistence is absent in the
+the steady state of our model (2) with the winding number
+                                                                               topologically trivial ϕ ¼ 0 case; see Fig. 3(e). Figure 3(g)
+                              Z π                                              shows fluctuation maxima at the interface between topo-
+                       1                                                       logical and trivial phases. Finally, Fig. 3(h) shows the
+                ν¼       Im          dkTr∂k log½HðkÞ;                 ð7Þ
+                      2π        −π                                             evolution of the topological region as identified by the
+
+                                                                        203603-4
+                                      PHYSICAL REVIEW LETTERS 135, 203603 (2025)
+
+                                                                       non-Hermitian topology and its physical consequences in a
+                                                                       quantum nonlinear dissipative system.
+                                                                          Our model can be implemented with arrays of super-
+                                                                       conducting cavities, following the scheme in Ref. [51],
+                                                                       in which the Kerr nonlinearity U arises naturally from
+                                                                       Josephson junctions and dissipation κ from the coupling to
+                                                                       external transmission lines. In addition, the phase gradient
+                                                                       ϕ and the inhomogeneous profiles of amplitude ϵj and
+                                                                       detunings Δj are induced via the external microwave pump
+                                                                       and a local tuning of the cavity frequencies. Our Letter may
+                                                                       lead to the design of nonlinear amplifiers and photo-
+                                                                       detectors in the microwave regime. Alternative topological
+                                                                       invariants like the one introduced for a single bosonic mode
+                                                                       in [53] may be compared to our model. Future work will
+                                                  pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ   involve characterizing critical properties and timescales,
+FIG. 4. (a) Norm of the Green’s function jjGjjF ¼ TrðG† GÞ             which may reveal anomalous large relaxation times [54]. It
+and (b) values of some nondiagonal elements of the Green
+                                                                       would be worth studying strongly interacting regimes with
+function for N ¼ 40, Δ=J ¼ 0.5, ϕ ¼ π=3, κ=J ¼ 1, and
+                                                                       other numerical methods such as matrix product state
+U=J ¼ −2 × 10−4 . Normalized correlation function Ḡjk
+(c) N ¼ 80, ϵ=J ¼ 38 (low-density phase), (d) N ¼ 80, ϵ=J ¼
+                                                                       methods [55,56], the appearance of similar phenomena
+40.2 (topological coexistence phase) for the nonlinear Bose-           in spin chains [57] and strongly interacting lattice models
+Hubbard chain (green dots), and the effective quadratic model          [58], and extensions to two dimensions where topological
+extract from the steady-state value (blue line). Δ=J ¼ 0.5,            amplification can occur in chiral edge states [59].
+ϕ ¼ π=3, κ=J ¼ 1, and U=J ¼ −2 × 10−4 .
+                                                                          Acknowledgments—D. P. and T. Ramos acknowledge
+                                                                       support from Spanish Project No. PID2021-127968NB-
+winding number νj. (iv) Finally, for values ϵ > ϵc;2 (region           I00 funded by MICIU/AEI/10.13039/501100011033, by
+III), the whole chain enters into the high-density, non-               Proyecto Sinérgico CAM 2020 Y2020/TCS-6545
+topological phase. A quantitative definition of the boundary           (NanoQuCo-CM), and the CSIC Research Platform on
+between II and III, ϵc;2 , is complicated by finite-size effects.      Quantum Technologies PTI-001. T. Ramos acknowledges
+In order to establish a criterion, we define ϵc;2 as the point at      the Ramón y Cajal program RYC2021-032473-I and
+which νj vanishes at all points j within the bulk of the chain,        Project No. PID2023-146531NA-I00, financed by
+corresponding to the segment N 0 < j < N − N 0 .                       MCIN/AEI/10.13039/501100011033 and the European
+   Green’s function and correlation functions—Our calcu-               Union NextGenerationEU/PRTR. L. R. and T. Roscilde
+lations show that both the chain Green’s function G and                acknowledge the support of PEPR-q (QubitAF project).
+the correlations are enhanced at the topological phase.
+Topological properties of G can be derived by the theory of
+topological amplification (see [11,42] and Supplemental                 [1] K. v. Klitzing, G. Dorda, and M. Pepper, Phys. Rev. Lett. 45,
+Material [49]). This is indeed what we observe in Fig. 4(a).                494 (1980).
+Figure 4(b) also shows that, in the topological region of the           [2] M. Z. Hasan and C. L. Kane, Rev. Mod. Phys. 82, 3045
+chain, for a site i on the left-hand side of the chain, Gji                 (2010).
+grows with j, which is a signature of directional amplifi-              [3] X.-L. Qi and S.-C. Zhang, Rev. Mod. Phys. 83, 1057 (2011).
+                                                                        [4] C.-E. Bardyn, M. A. Baranov, C. V. Kraus, E. Rico, A.
+cation. We have also studied normalized two-point corre-
+                                pﬃﬃﬃﬃﬃﬃﬃﬃﬃ                                  İmamoğlu, P. Zoller, and S. Diehl, New J. Phys. 15, 085001
+lation functions Ḡjk ¼ Gjk = nj nk at the low-density phase                (2013).
+and at the critical line separating phases I and II for a chain         [5] F. D. M. Haldane and S. Raghu, Phys. Rev. Lett. 100,
+of N ¼ 80 sites. In Figs. 4(c) and 4(d), we observe longer-                 013904 (2008).
+range correlations on the critical line, whereas in the low-            [6] T. Ozawa, H. M. Price, A. Amo, N. Goldman, M. Hafezi, L.
+density phase, correlations decay exponentially with                        Lu, M. C. Rechtsman, D. Schuster, J. Simon, O. Zilberberg,
+distance.                                                                   and I. Carusotto, Rev. Mod. Phys. 91, 015006 (2019).
+   Conclusions and outlook—We have shown that a driven-                 [7] M. Jalali Mehrabad, S. Mittal, and M. Hafezi, Phys. Rev. A
+                                                                            108, 040101 (2023).
+dissipative Bose-Hubbard model with a site-dependent,
+                                                                        [8] Y. Ota, K. Takata, T. Ozawa, A. Amo, Z. Jia, B. Kante, M.
+linearly varying phase in the coherent drive exhibits                       Notomi, Y. Arakawa, and S. Iwamoto, Nanophotonics 9,
+topological amplification at the phase boundary between                     547 (2020).
+a high- and a low-density phase. Topological phases can                 [9] S. Barik, A. Karasahin, C. Flower, T. Cai, H. Miyake, W.
+be characterized by a topological invariant associated to                   DeGottardi, M. Hafezi, and E. Waks, Science 359, 666
+point-gap topology. Our model shows the emergence of                        (2018).
+
+
+                                                                203603-5
+                                      PHYSICAL REVIEW LETTERS 135, 203603 (2025)
+
+[10] V. Peano, M. Houde, F. Marquardt, and A. A. Clerk, Phys.           [36] R. Labouvie, B. Santra, S. Heun, and H. Ott, Phys. Rev.
+     Rev. X 6, 041026 (2016).                                                Lett. 116, 235302 (2016).
+[11] D. Porras and S. Fernández-Lorenzo, Phys. Rev. Lett. 122,          [37] A. Roy and K. Saha, New J. Phys. 21, 103050 (2019).
+     143901 (2019).                                                     [38] N. Syassen, D. M. Bauer, M. Lettner, T. Volz, D. Dietze, J. J.
+[12] A. Amo, J. Lefrère, S. Pigeon, C. Adrados, C. Ciuti, I.                García-Ripoll, J. I. Cirac, G. Rempe, and S. Dürr, Science
+     Carusotto, R. Houdré, E. Giacobino, and A. Bramati, Nat.               320, 1329 (2008).
+     Phys. 5, 805 (2009).                                               [39] C. C. Wanjura, M. Brunelli, and A. Nunnenkamp, Nat.
+[13] Z. Yang, F. Gao, X. Shi, X. Lin, Z. Gao, Y. Chong, and B.               Commun. 11, 3149 (2020).
+     Zhang, Phys. Rev. Lett. 114, 114301 (2015).                        [40] T. Ramos, J. J. García-Ripoll, and D. Porras, Phys. Rev. A
+[14] P. Kiefer, F. Hakelberg, M. Wittemer, A. Bermúdez, D.                   103, 033513 (2021).
+     Porras, U. Warring, and T. Schaetz, Phys. Rev. Lett. 123,          [41] A. Gómez-León, T. Ramos, A. González-Tudela, and D.
+     213605 (2019).                                                          Porras, Phys. Rev. A 106, L011501 (2022).
+[15] I. Carusotto and C. Ciuti, Rev. Mod. Phys. 85, 299 (2013).         [42] A. Gómez-León, T. Ramos, A. González-Tudela, and D.
+[16] M. J. Hartmann, J. Opt. 18, 104005 (2016).                              Porras, Quantum 7, 1016 (2023).
+[17] M. J. Hartmann, F. G. Brandao, and M. B. Plenio, Laser             [43] Z. Gong, Y. Ashida, K. Kawabata, K. Takasan, S.
+     Photonics Rev. 2, 527 (2008).                                           Higashikawa, and M. Ueda, Phys. Rev. X 8, 031079 (2018).
+[18] I. Carusotto, D. Gerace, H. E. Tureci, S. De Liberato, C. Ciuti,   [44] K. Kawabata, K. Shiozaki, M. Ueda, and M. Sato, Phys.
+     and A. Imamoğlu, Phys. Rev. Lett. 103, 033601 (2009).                   Rev. X 9, 041015 (2019).
+[19] A. Le Boité, G. Orso, and C. Ciuti, Phys. Rev. A 90, 063821       [45] M. Brunelli, C. C. Wanjura, and A. Nunnenkamp, SciPost
+     (2014).                                                                 Phys. 15, 173 (2023).
+[20] Z. Wang, C. Navarrete-Benlloch, and Z. Cai, Phys. Rev.             [46] T. Guaita, L. Hackl, T. Shi, C. Hubig, E. Demler, and J. I.
+     Lett. 125, 115301 (2020).                                               Cirac, Phys. Rev. B 100, 094529 (2019).
+[21] A. Le Boité, G. Orso, and C. Ciuti, Phys. Rev. Lett. 110,         [47] L. Hackl, T. Guaita, T. Shi, J. Haegeman, E. Demler, and J. I.
+     233601 (2013).                                                          Cirac, SciPost Phys. 9, 048 (2020).
+[22] F. Vicentini, F. Minganti, R. Rota, G. Orso, and C. Ciuti,         [48] T. Guaita, Quantum variational methods for Gaussian states
+     Phys. Rev. A 97, 013853 (2018).                                         and beyond, Ph.D. thesis, Technische Universität München,
+[23] L. M. Sieberer, M. Buchhold, and S. Diehl, Rep. Prog. Phys.             2022.
+     79, 096001 (2016).                                                 [49] See Supplemental Material at http://link.aps.org/
+[24] T. Graß, Phys. Rev. A 99, 043607 (2019).                                supplemental/10.1103/w32k-x3l5 for further details on
+[25] S. Finazzi, A. Le Boité, F. Storme, A. Baksic, and C. Ciuti,           the Gaussian variational method, phase diagram, and topo-
+     Phys. Rev. Lett. 115, 080604 (2015).                                    logical amplification formalism.
+[26] W. Casteels and C. Ciuti, Phys. Rev. A 95, 013812 (2017).          [50] K. Seibold, R. Rota, and V. Savona, Phys. Rev. A 101,
+[27] D. Dahan, G. Arwas, and E. Grosfeld, npj Quantum Inf. 8, 1              033839 (2020).
+     (2022).                                                            [51] T. Ramos, Á. Gómez-León, J. J. García-Ripoll, A.
+[28] A. A. Houck, H. E. Türeci, and J. Koch, Nat. Phys. 8, 292               González-Tudela, and D. Porras, arXiv:2207.13728.
+     (2012).                                                            [52] A. McDonald, R. Hanai, and A. A. Clerk, Phys. Rev. B 105,
+[29] Y. Yanay, J. Braumüller, S. Gustavsson, W. D. Oliver, and C.            064302 (2022).
+     Tahan, npj Quantum Inf. 6, 58 (2020).                              [53] G. Villa, J. del Pino, V. Dumont, G. Rastelli, M. Michałek, A.
+[30] R. Ma, B. Saxberg, C. Owens, N. Leung, Y. Lu, J. Simon,                 Eichler, and O. Zilberberg, Sci. Adv. 11, eadt9311 (2025).
+     and D. I. Schuster, Nature (London) 566, 51 (2019).                [54] G. Lee, A. McDonald, and A. Clerk, Phys. Rev. B 108,
+[31] M. Fitzpatrick, N. M. Sundaresan, A. C. Y. Li, J. Koch, and             064311 (2023).
+     A. A. Houck, Phys. Rev. X 7, 011016 (2017).                        [55] J. Cui, J. I. Cirac, and M. C. Bañuls, Phys. Rev. Lett. 114,
+[32] S. Rodriguez, A. Amo, I. Sagnes, L. Le Gratiet, E. Galopin,             220601 (2015).
+     A. Lemaître, and J. Bloch, Nat. Commun. 7, 11887 (2016).           [56] E. Mascarenhas, H. Flayac, and V. Savona, Phys. Rev. A 92,
+[33] D. Porras and J. I. Cirac, Phys. Rev. Lett. 93, 263602 (2004).          022116 (2015).
+[34] S. Debnath, N. M. Linke, S.-T. Wang, C. Figgatt, K. A.             [57] S. E. Begg and R. Hanai, Phys. Rev. Lett. 132, 120401 (2024).
+     Landsman, L.-M. Duan, and C. Monroe, Phys. Rev. Lett.              [58] P. Brighi and A. Nunnenkamp, Phys. Rev. A 110, L020201
+     120, 073001 (2018).                                                     (2024).
+[35] T. Tomita, S. Nakajima, I. Danshita, Y. Takasu, and Y.             [59] C. Vega, A. M. d. l. Heras, D. Porras, and A. González-
+     Takahashi, Sci. Adv. 3, e1701513 (2017).                                Tudela, Quantum 9, 1861 (2025).
+
+
+
+
+                                                                 203603-6
+
