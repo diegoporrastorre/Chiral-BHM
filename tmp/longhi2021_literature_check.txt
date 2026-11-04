@@ -1,0 +1,848 @@
+                                                     Convective and absolute PT symmetry breaking in tight-binding lattices
+
+                                                                                                   Stefano Longhi1, ∗
+                                                              1
+                                                                  Dipartimento di Fisica, Politecnico di Milano and Istituto di Fotonica e Nanotecnologie
+                                                                  del Consiglio Nazionale delle Ricerche, Piazza L. da Vinci 32, I-20133 Milano, Italy
+                                                                                                 (ΩDated: June 24, 2021)
+                                                            We investigate the onset of parity-time (PT ) symmetry breaking in non-Hermitian tight-binding
+                                                         lattices with spatially-extended loss/gain regions in presence of an advective term. Similarly to the
+                                                         instability properties of hydrodynamic open flows, it is shown that PT symmetry breaking can be
+                                                         either absolute or convective. In the former case, an initially-localized wave packet shows a secular
+                                                         growth with time at any given spatial position, whereas in the latter case the growth is observed
+                                                         in a reference frame moving at some drift velocity while decay occurs at any fixed spatial position.
+                                                         In the convective unstable regime, PT symmetry is restored when the spatial region of gain/loss in
+                                                         the lattice is limited (rather than extended). We consider specifically a non-Hermitian extension of
+arXiv:1310.5004v1 [quant-ph] 18 Oct 2013
+
+
+
+
+                                                         the Rice-Mele tight binding lattice model, and show the existence of a transition from absolute to
+                                                         convective symmetry breaking when the advective term is large enough. An extension of the analysis
+                                                         to ac-dc-driven lattices is also presented, and an optical implementation of the non-Hermitian Rice-
+                                                         Mele model is suggested, which is based on light transport in an array of evanescently-coupled
+                                                         optical waveguides with a periodically-bent axis and alternating regions of optical gain and loss.
+
+                                                         PACS numbers: 03.65.-w, 11.30.Er, 72.10.Bg, 42.82.Et,
+
+
+                                                             I.     INTRODUCTION                                 rather unique properties to mold the flow of light in non-
+                                                                                                                 conventional ways, with the possibility to observe, for
+                                              Non-Hermitian Hamiltonian models are often encoun-                 example, double refraction and nonreciprocal diffraction
+                                           tered in a wide class of quantum and classical systems                patterns [20], unidirectional Bragg scattering and invisi-
+                                           [1]. They are introduced, for example, to model open sys-             bility [21, 28, 29, 31–35], non-reciprocity [37], giant Goos-
+                                           tems and dissipative phenomena in quantum mechanics                   Hänchen shift [38], and simultaneous perfect absorption
+                                           (see, for instance, [1–6]). In optics, non-Hermitian mod-             and laser behaviour [39, 40]. So far, PT quantum and
+                                           els naturally arise owing to the presence of optical gain             classical systems have been mainly investigated in the
+                                           and loss regions in dielectric or metal-dielectric struc-             unbroken PT phase, where the energies are real-valued,
+                                           tures [7]. A special class of non-Hermitian Hamiltoni-                or at the symmetry breaking point, where exceptional
+                                           ans is provided by complex potentials having parity-time              points or spectral singularities appear in the underlying
+                                           (PT ) symmetry [8, 9], that is invariance under simulta-              Hamiltonian (see, for instance, [19, 25, 41]). In the bro-
+                                           neous parity transform (P: p̂ → −p̂, x̂ → −x̂, where                  ken PT phase, complex-conjugate energies appear. In
+                                           p̂ and x̂ stand for momentum and position operators,                  the context of spatially-extended dissipative dynamical
+                                           respectively) and time reversal (T : p̂ → −p̂, x̂ → x̂,               systems and hydrodynamic flows [42], breaking of the PT
+                                           i → −i). An important property of PT Hamiltonians is                  phase indicates a bifurcation from a marginally-stable
+                                           to admit of an entirely real-valued energy spectrum below             phase to an unstable phase. This means that, while an
+                                           a phase transition symmetry-breaking point, a property                initially localized wave packet can not secularly grow in
+                                           that attracted great attention in earlier studies on the              the unbroken PT phase, it does in the broken PT phase
+                                           subject owing to the possibility to formulate a consistent            owing to the emergence of modes with complex energies.
+                                           quantum mechanical theory in a non-Hermitian frame-                   In hydrodynamics, an unstable open flow can be classi-
+                                           work [8–11]. Indeed, PT -symmetric Hamiltonians are                   fied as either absolutely or convectively unstable [43–45].
+                                           a special case of pseudo-Hermitian Hamiltonians, which                A one-dimensional flow described by an order parameter
+                                           can be mapped into Hermitian ones [12]. PT -symmetric                 ψ(x, t) is unstable if, for any given localized perturbation
+                                           Hamiltonians have found interest and applications in                  ψ(x, 0) at initial time t = 0, ψ(x, t) → ∞ as t → ∞
+                                           several physical fields, including magnetohydrodynam-                 along at least one ray x/t = v = const. The instabil-
+                                           ics [13], cavity quantum electrodynamics [14], quantum-               ity is said to be absolute if ψ(x, t) → ∞ along the ray
+                                           field-theories [11, 15], and electronics [16]. More recently,         x/t = 0, whereas it is convective if ψ(x, t) → 0 along
+                                           great efforts have been devoted to the study and the ex-              the ray x/t = 0 [43]. Physically, in the convectively
+                                           perimental implementation of optical structures possess-              unstable regime the initial perturbation grows when ob-
+                                           ing PT symmetry (see, for instance, [17–30] and refer-                served along the trajectory x = vt at some drift velocity
+                                           ences therein). The huge interest raised by the introduc-             v, whereas it decays when observed at a fixed position.
+                                           tion of PT optical media is mainly motivated by their                 Convectively unstable flows generally arise in the pres-
+                                                                                                                 ence of an advective (drift) term in the system, in such
+                                                                                                                 a way that the growing perturbation drifts in the labo-
+                                           ∗ stefano.longhi@.polimi.it                                           ratory reference frame and eventually escapes from the
+                                                                                                                                2
+
+system. Originally introduced in hydrodynamic contexts,
+the concepts of convective and absolute instabilities have
+found interest and applications in other physical fields,
+for example in the study of dissipative optical patterns
+and noise-sustained structures in nonlinear optics [46].
+   Inspired by the properties of hydrodynamic unsta-
+ble flows [43], in this work we introduce the concepts
+of convective and absolute PT symmetry breaking for
+spatially-extended Hamiltonian systems. Specifically, we
+investigate the symmetry-breaking properties of a tight-
+binding lattice model with spatially-extended alternat-
+ing gain and loss regions, and show that the presence
+of an advective term can change the symmetry break-
+ing from absolute to convective. The lattice model
+that we consider is a non-Hermitian extension of the
+famous Rice-Mele Hamiltonian, originally introduced to
+model conjugated diatomic polymers [47]. In the convec-
+tively PT symmetry breaking regime, the PT symmetry
+can be restored when the gain/loss region becomes spa-           FIG. 1. (Color online). (a) Schematic of the non-Hermitian
+tially confined. A physical implementation of the non-           extension of the Rice-Mele tight-binding lattice model. The
+Hermitian Rice-Mele lattice model is proposed using ar-          lattice unit cell contains two sites (a dimer), one with gain
+rays of coupled optical waveguides in a zig-zag geometry         and the other with loss. Next-nearest neighborhood hopping
+with periodically-bent axis and alternating optical gain         occurs at a rate ρ exp(iϕ). Convective transport at the PT
+                                                                 symmetry breaking point is obtained for ρ 6= 0 and ϕ 6= 0, π.
+and loss.
+                                                                 (b) Optical realization of the Rice-Mele model in a zig-zag
+   The paper is organized as follows. In Sec.II the Rice-        array of optical waveguides with alternating optical gain and
+Mele tight-binding lattice model with non-Hermitian and          loss [cross section in the transverse (x, y) plane]. The opti-
+advective terms is presented, and a physical implemen-           cal axis of the array is bent along the paraxial propagation
+tation based on light transport in arrays of coupled op-         distance t. Axis bending realizes an effective combined ac-dc
+                                                                 driving of the lattice with forces Fx (t) and Fy (t) along the
+tical waveguides is suggested. In Sec.III the concepts of
+                                                                 two transverse directions x and y.
+absolute and convective PT symmetry breaking are in-
+troduced for periodic potentials, and the transition from
+absolute to convective symmetry breaking for the Rice-
+                                                                 mode equations
+Mele lattice model is studied by application of asymptotic
+(saddle point) methods. The concepts of convective and                       dan
+absolute symmetry breaking are also discussed for ac-dc                    i     = −κbn − σbn−1 − ρ exp(iϕ)an+1
+                                                                              dt
+driven lattice models, where the quasi-energy bands . In                         − ρ exp(−iϕ)an−1 + igan                       (1)
+Sec.IV the main conclusions and future developments are                      dbn
+outlined. Finally, in two Appendixes some technical de-                    i     = −κan − σan+1 − ρ exp(iϕ)bn+1
+tails on Floquet analysis of the ac-dc driven lattice model                   dt
+and saddle point calculations for the Rice-Mele Hamilto-                         − ρ exp(−iϕ)bn−1 − igbn                       (2)
+nian are presented.                                                 where κ, σ > 0 are the nearest-neighborhood modu-
+                                                                 lated hopping rates within the unit cell, ρ exp(iϕ) is the
+                                                                 complex-valued hopping rate of next nearest sites with
+                                                                 controlled phase ϕ, and g is the gain/loss rate at alter-
+                                                                 nating sites. The coupled-mode equations (1) and (2) are
+                   II.   THE MODEL                               derived from the tight-binding Hamiltonian
+                                                                            X                                 
+                                                                    Ĥ = −       κâ†n b̂n + σâ†n b̂n−1 + H.c.
+   A.    Extended Rice-Mele Hamiltonian and PT                                 n
+                 symmetry breaking                                         Xh                                            i
+                                                                       −           ρ exp(iϕ) â†n ân+1 + b̂†n b̂n+1 + H.c.    (3)
+                                                                           n
+   We consider transport of classical or quantum waves on                      X                          
+                                                                       + ig          â†n ân − b̂†n b̂n
+a PT -invariant tight-binding dimerized superlattice with
+                                                                               n
+nearest and next-nearest neighborhood hopping schemat-
+ically shown in Fig.1(a). The evolution of the amplitude         which is Hermitian in the limiting case g = 0 or after
+probabilities an (t), bn (t) at the two sites of the n-th unit   replacing g → ig. The lattice Hamiltonian (3) is invari-
+cell in the lattice is governed by the following coupled-        ant under simultaneous parity transformation and time
+                                                                                                                         3
+
+reversal, and can be regarded as a non-Hermitian ex-           appear near q = π, which is the signature of PT sym-
+tension of the Rice-Mele Hamiltonian [47, 48], originally      metry breaking; see Fig.2. It is worth noticing that the
+introduced to model conjugated diatomic polymers [47]          group velocity vg of Bloch modes near q = π at the sym-
+and found in other physical systems as well, for exam-         metry breaking point, defined by vg = (dRe(E± )/dq), is
+ple in cold atoms moving in one-dimensional optical su-        given by
+perlattices [49]. A possible physical implementation of
+this Hamiltonian will be discussed in the following sub-                             vg = −2ρ sin ϕ                    (9)
+section. We note that tight-binding lattice models with
+non-Hermitian terms have been introduced and studied           which does not vanish provided that ρ 6= 0, i.e. in
+in several recent works [50–53]. In particular, the lim-       the presence of next-nearest neighborhood hopping, and
+iting case ρ = 0 and κ1 = κ2 of the Hamiltonian (3)            ϕ 6= 0, π. As it will be shown in Sec.III.B, a non-vanishing
+was previously considered in Refs.[21, 50], where for the      and sufficiently large group velocity can cause the PT
+infinitely-extended system PT symmetry breaking was            symmetry breaking to change from absolute to convec-
+shown to occur at g = gth = 0. As discussed in the next        tive.
+section, this kind of PT symmetry breaking is always
+absolute.
+                                                                    B. Ac-dc driven lattice model and optical
+For the general case κ1 6= κ2 and ρ 6= 0, the onset of PT           realization of the non-Hermitian Rice-Mele
+symmetry breaking can be readily determined by analyti-                              Hamiltonian
+cal calculation of the energy spectrum of the Hamiltonian
+(3). To this aim, let us search for a solution to Eqs.(1)
+and (2) in the form of Bloch-Floquet states                       Before discussing the nature of the PT symme-
+                                                               try breaking for the extended non-Hermitian Rice-Mele
+          
+             an (t)
+                      
+                          A                                    Hamiltonian (3), it is worth suggesting possible physical
+                     =         exp(−iEt + iqn)         (4)     implementations of this model. To realize the Hamil-
+             bn (t)       B
+                                                               tonian (3), in addition to the non-Hermitian (gain and
+where q is the quasi-momentum, which is assumed to vary        loss) terms one needs to implement next-nearest neigh-
+in the interval (0, 2π), and E = E(q) the corresponding        borhood hoppings with controlled phase ϕ. Rather gen-
+energy. Substitution of the Ansatz (4) into Eqs.(1) and        erally, tight-binding lattice models with controlled phase
+(2) yields the following homogeneous linear system for         of hopping rates can be realized by combined ac-dc forc-
+the complex amplitudes A = A(q) and B = B(q)                   ing. Here we briefly propose a photonic realization of
+                                                               the extended Rice-Mele model, based on light transport
+ [E + 2ρ cos(q + ϕ) − ig] A + [κ + σ exp(−iq)]B = 0            in a superlattice of evanescently-coupled optical waveg-
+  [κ + σ exp(iq)] A + [E + 2ρ cos(q + ϕ) + ig] B = 0 (5)       uides. The Rice-Mele Hamiltonian (3) can be basically
+                                                               obtained as a limiting case of an ac-driven tight-binding
+which is solvable provided that the determinantal equa-        lattice at high modulation frequencies. Another possible
+tion                                                           physical system where the combined ac-dc driven lattice
+                                                               model could be implemented is provided by cold atoms
+   E + 2ρ cos(q + ϕ) − ig        κ + σ exp(−iq)                trapped in optical superlattices [49], where gain is in-
+                                                      =0
+        κ + σ exp(iq)       E + 2ρ cos(q + ϕ) + ig             troduced via atom injection at alternating sites [6, 54].
+                                                         (6)   However, in spite of several theoretical proposals, exper-
+is satisfied. This yields the following dispersion relations   imental realizations of PT -symmetric Hamiltonians us-
+E = E± (q) for the two superlattice minibands                  ing ultracold atoms is still missing, and hence we limit
+                              p                                here to briefly discuss the photonic system. The optical
+ E± (q) = −2ρ cos(q + ϕ) ± −g 2 + κ2 + σ 2 + 2κσ cos q         structure that we consider is shown in Fig.1(b) and is ba-
+                                                         (7)   sically composed by a sequence of evanescently-coupled
+and the following expressions for the amplitudes A, B of       optical waveguides in a zig-zag geometry with alternat-
+Bloch-Floquet eigenmodes                                       ing optical amplification (gain) and loss. The waveguides
+                                                           are displaced in the horizontal (x) and vertical (y) direc-
+       A± (q)               κ + σ exp(−iq)                     tions by the distances dx and dy , respectively. In the zig-
+                 =                                   . (8)
+       B± (q)         ig − E± (q) − 2ρ cos(q + ϕ)              zag geometry, non-negligible evanescent coupling occurs
+                                                               for nearest and next-nearest waveguides [55], with cou-
+From Eq.(7) it follows that the energy spectrum is en-         pling constants (hopping rates) κ1 , κ2 for adjacent guides
+tirely real-valued for g < gth with gth ≡ |σ − κ|. In          and κ3 for next-nearest guides, as indicated in Fig.1(b).
+this case, corresponding to the unbroken PT phase, the         The values of the coupling constants κ1 , κ2 and κ3 are
+energy spectrum comprises two minibands which do not           determined by certain overlapping integrals of the opti-
+                                    p minibands are sepa-
+cross. In particular, at q = π the two                         cal modes trapped in the waveguides, and they are usu-
+rated by an energy gap of width 2 gth  2 − g 2 . As g → g −    ally exponentially-decaying functions of waveguide sepa-
+                                                         th
+the gap at q = π shrinks and the two minibands touch           ration. For dielectric waveguides, the coupling constants
+at q = π; as g overcomes gth , complex-conjugate energies      take real and positive values. The difference of couplings
+                                                                                                                                    4
+
+
+
+
+FIG. 2. (Color online). Energy spectrum of the non-Hermitian Rice-Mele Hamiltonian (3) (a) in the unbroken PT phase
+(g = 0), (b) at the symmetry breaking point (g = gth ), and (c) in the broken PT phase (g = 3gth ). Real and imaginary parts
+of the energies for the two superlattice minibands are depicted by the continuous and dashed lines, respectively. Parameter
+values are κ = 1, σ = 0.8, ρ = 0.6, and ϕ = π/2, corresponding to gth = |κ − σ| = 0.2.
+
+
+κ1 and κ2 can be controlled by changing the horizon-             i.e. for Fx = Fy = 0, Eqs.(10) and (11) reproduce the
+tal (dx ) and vertical (dy ) distances of waveguides, with       extended Rice-Mele model [Eqs.(1) and (2)] with ϕ = 0.
+κ1 = κ2 for dx ≃ dy . For straight waveguides, the array         The equivalence of the driven lattice model [Eqs.(10) and
+of Fig.1(b) thus realizes the extended Rice-Mele model           (11)] with the static Rice-Mele lattice model [Eqs.(1) and
+of Fig.1(a) with κ = κ1 , σ = κ2 , ρ = κ3 and ϕ = 0.             (2)] with ϕ 6= 0 can be established as follows. Let us tailor
+To realize an effective complex-valued amplitude for the         the axis bending profiles x0 (t) and y0 (t) in the horizonatl
+hopping rate between next-nearest neighborhood guides,           and vertical directions to realize the following ac-dc forces
+i.e. ϕ 6= 0, we bend the waveguide axis in both x and y          Fx (t) and Fy (t)
+directions along the paraxial propagation distance t, so
+that the optical axis of the array describes a curved path                       Fx (t) = U − (Γω) cos(ωt + φ)
+with parametric equations x = x0 (t) and y = y0 (t). Ar-                         Fy (t) = −U − (Γω) cos(ωt − φ),              (13)
+rays of waveguides with arbitrarily curved axis in three-
+dimensions can be realized, for example, by the technique        where U , Γ and ω are real-valued positive parameters. In
+of femtosecond laser writing in optical glasses (see, for in-    our optical waveguide system, the combined ac-dc forc-
+stance, [56]). In the tight-binding and paraxial approx-         ing corresponds to a sinusoidal axis bending with spatial
+imations, light transport in the superlattice with a bent        frequency ω superimposed to a parabolic path [59]. Note
+axis is governed by the following coupled-mode equations         that the sinusoidal bending is not in phase for the hor-
+(see, for instance, [57])                                        izontal and vertical directions owing to the phase term
+                                                                 φ. Let us further assume that the following resonance
+      dAn                                                        condition
+    i     = −κ1 Bn − κ2 Bn−1 − κ3 (An+1 + An−1 )
+       dt
+          − [Fx (t) + Fy (t)]nAn + igAn            (10)                                     Mω = U                            (14)
+      dBn                                                        is satisfied for some integer M , and let us introduce the
+    i     = −κ1 An − κ2 An+1 − κ3 (Bn+1 + Bn−1 )
+       dt                                                        amplitudes an , bn via the gauge transformation
+          − [Fx (t) + Fy (t)]nBn − Fx (t)Bn − igBn (11)
+                                                                       An (t) = an (t) exp[iϕn + inΦ(t)]              (15)
+where An , Bn are the mode amplitudes of light trapped                 Bn (t) = bn (t) exp[iϕn + iβ + inΦ(t) + iΘ(t)] (16)
+in the alternating waveguides with optical gain and loss,
+respectively, g is the optical gain/loss coefficient, and        where we have set
+                                                                         Z t                                    Z t
+              2πns dx d2 x0             2πns dy d2 y0
+ Fx (t) = −                 , F y (t) =               .   (12)    Φ(t) =     dt0 [Fx (t0 ) + Fy (t0 )] , Θ(t) =     dt0 Fx (t0 ),
+                λ      dt2                λ      dt2                         0                                     0
+                                                                                                                              (17)
+account for the axis bending in the horizontal (x) and           β = M φ − Γ sin φ, and
+vertical (y) directions [57, 58]. In Eq.(12), λ is the wave-
+length of the propagating light and ns is the substrate                                 ϕ = 2M φ + M π                        (18)
+refractive index at wavelength λ. Note that Eqs.(10) and
+(11) describe a dimerized lattice with external forcing,         Substitution of Eqs.(15) and (16) into Eqs.(10,11) yields
+with Fx (t) and Fy (t) playing the role of the external          a system of coupled-equations for the amplitudes an (t)
+forces. Note also that, in the absence of axis bending,          and bn (t) with time-periodic coefficients of period T =
+                                                                                                                           5
+
+2π/ω. As shown in the Appendix A, if the system is ob-           the introduction section and formally defined below. An
+served at discrete times τ = 0, T, 2T, 3T, ..., the evolution    important case where PT symmetry breaking arises be-
+of the amplitudes an (τ ), bn (τ ) can be mapped into the        cause of the emergence of extended (non-normalizable)
+dynamics of an effective static lattice (i.e. with time-         states with complex conjugate energies is the one of a
+independent hopping rates) which sustains two mini-              periodic potential, V (x + d) = V (x). In this case, the
+bands with dispersion relations E± (q) given by the quasi-       energy spectrum is absolutely continuous and composed
+energies of the original time-periodic system. In partic-        by energy bands. We assume that the energy spectrum
+ular, in the large modulation limit ω  κ1 , κ2 , κ3 , g, i.f.   of Ĥ is entirely real-valued for g ≤ gth , corresponding to
+for T → 0, it can be shown (see Appendix A) that the a-          the unbroken PT phase, whereas complex-conjugate en-
+dc driven lattice model exactly reproduces the Rice-Mele         ergies appear for g > gth , where gth ≥ 0 determines the
+static model [Eqs.(1) and (2)] with effective hopping rates      symmetry breaking point. For example, for the potential
+given by                                                         VR (x) = cos(2πx/d) and VI (x) = sin(2πx/d) PT sym-
+                                                                 metry breaking is attained at gth = 1 [20, 33–35]. Let us
+                    κ = κ1 JM (Γ)                        (19)
+                                                                 then consider an initial wave packet ψ(x, 0) at time t = 0,
+                    σ = κ2 JM (Γ)                        (20)    and let ψ(x, t) = exp(−iĤt)ψ(x, 0) be the evolved wave
+                    ρ = κ3 J0 (2Γ cos φ)                 (21)    packet at successive time t. In the unbroken PT phase,
+and with the phase ϕ given by Eq.(18), where Jn is the           one has ψ(x, t) → 0 as t → ∞ at any fixed position x
+Bessel function of first kind and order n. Therefore, the        owing to delocalization of the wave packet in the lattice.
+zig-zag waveguide array of Fig.1(b) with alternating op-         However, in the broken PT phase, i.e. for g > gth , owing
+tical gain and loss and with a suitable axis bending ef-         to the appearance of complex energies the wave packet
+fectively realizes the extended Rice-Mele lattice model of       ψ(x, t) is expected to secularly grow as t → ∞. Accord-
+Fig.1(a) with a non-vanishing advective term ϕ and with          ing to the definitions of unstable flows in hydrodynamic
+controlled hopping rates κ, σ, ρ.                                systems [43, 44], the PT symmetry breaking is said to
+                                                                 be absolute if ψ(x, t) → ∞ at x = 0 (or at any fixed
+                                                                 position x = x0 ), whereas it is said to be convective if
+    III.   CONVECTIVE AND ABSOLUTE PT                            ψ(x, t) → ∞ along the ray x = vt for some drift velocity
+             SYMMETRY BREAKING                                   v, but ψ(x, t) → 0 at x = 0 (or at any fixed position
+                                                                 x = x0 ). The physics behind the definition of absolute
+  In this section we introduce the notion of convective          and convective unstable flows is rather simple and is visu-
+and absolute PT symmetry breaking, inspired by the               alized in Fig.3. In the convectively unstable regime, an
+concepts of convective and absolute unstable flows in hy-        initial wave packet (perturbation) drifts in the labora-
+drodynamics [43–45], and then we apply such concepts             tory reference frame with some velocity v, and along the
+to the non-Hermtiian Rice-Mele and ac-dc driven models           ray x = vt, i.e. in the reference frame moving with the
+presented in Sec.II.                                             wave packet, the perturbation secularly grows with time.
+                                                                 The drift velocity v is basically determined by the wave
+                                                                 packet group velocity at the quasi-momentum k = ks
+    A. Definition of absolute and convective PT                  where the maximum growth rate (i.e. largest imaginary
+     symmetry breaking for a periodic potential                  part of the energy) occurs. However, at a fixed posi-
+                                                                 tion x = x0 (e.g. x0 = 0), the perturbation ψ(x0 , t) can
+                                                                 grow only transiently, but finally it vanishes as t → ∞
+   In this subsection we present the rather general defi-
+                                                                 owing to the (possibly fast) drift of the growing wave
+nition of convective and absolute PT symmetry break-
+                                                                 packet [see Fig.3(a)]. Conversely, in the absolutely un-
+ing for a continuous system in one spatial dimension x,
+                                                                 stable regime the perturbation grows so fast that, even
+described by a PT -invariant Hamiltonian Ĥ = −∂x2 +
+                                                                 in the presence of an advective term (a drift), at a fixed
+V (x) with a potential V (x) = VR (x) + igVI (x), where
+                                                                 spatial position x0 the perturbation ψ(x0 , t) grows indef-
+VR (−x) = VR (x) and VI (−x) = −VI (x) are the real and
+                                                                 initely with time [see Fig.3(b)]. To determine whether
+imaginary parts of the potential and g ≥ 0 is a real-
+                                                                 the PT symmetry breaking is convective or absolute, let
+valued parameter that measures the strength of the non-
+                                                                 us consider the Hamiltonian Ĥ with g > gth , and let
+Hermitian part of the potential. The concept of con-
+                                                                 us consider an initial wave packet given by a superpo-
+vective and absolute PT symmetry breaking is mean-
+                                                                 sition of Bloch-Floquet modes φk (x) = uk (x) exp(ikx)
+ingful in case where at the symmetry breaking point
+complex-conjugate energies emanate from the continu-             with energy E = E(k), i.e. Ĥφk (x) = E(k)φk (x), with
+ous spectrum of Ĥ, i.e. the corresponding eigenstates           uk (x+d) = uk (x) and which the quasi-momentum k that
+are not normalizable. In fact, if the symmetry breaking          varies from −∞ to ∞ to account for all the lattice bands
+arises because of the appearance of pairs of normalizable        (extended band representation). The wave packet then
+states with complex-conjugate energies, the PT symme-            evolves according to the relation
+try breaking is always absolute and can not be convec-                          Z ∞
+tive, according to the hydrodynamic definitions of abso-
+                                                                    ψ(x, t) =         dkF (k)uk (x) exp[ikx − iE(k)t]   (22)
+lute and convective unstable flows briefly mentioned in                         −∞
+                                                                                                                               6
+
+where F (k) is the spectrum of excited Bloch-Floquet
+modes. Along the ray x = vt one has
+          Z ∞
+   ψ(t) =      dkF (k)uk (vt) exp[ikvt − iE(k)t]. (23)
+              −∞
+
+The determination of the nature (absolute or convective)
+of the PT symmetry breaking entails the estimation of
+the asymptotic behavior of ψ(t) as t → ∞. Since uk (x)
+is a limited and periodic function of x, we can study the
+asymptotic behavior of the associated wave packet
+                   Z ∞
+          ψ1 (t) =     dkF (k) exp[ikvt − iE(k)t]    (24)
+                    −∞
+
+obtained by dropping the term uk (vt) under the in-
+tegral in Eq.(23). In fact, it can be readily shown                 FIG. 3. (Color online). Schematic of wave packet evolution in
+that lim supt→∞ |ψ(t)| → ∞ (→ 0) if and only if                     the convective and absolute PT symmetry breaking regimes.
+lim supt→∞ |ψ1 (t)| → ∞ (→ 0). Note that for the de-                The dotted lines show the evolution of the wave packet along
+termination of the asymptotic behavior of ψ1 (t) we only            the path x = 0.
+need to evaluate the integral on the right hand side of
+Eq.(24) for those values of k for which Im{E(k)} ≥ 0,
+the other modes giving no contribution (they are surely             which is determined by the sign of the imaginary part of
+decaying).The asymptotic behavior of ψ1 (t) as t → ∞                E(k) at the saddle point k = ks obtained from Eq.(26)
+can be determined, under certain conditions which are               with v = 0. Hence, the PT symmetry breaking is ab-
+generally satisfied, by the saddle-point (or steepest de-           solute if Im{E(ks )} > 0, whereas it is convective if
+scend) method [43]. This entails analytic continuation              Im{E(ks )} ≤ 0, where the saddle point ks is determined
+of the function E(k) is the complex k plane and, us-                from the equation (dE/dk)ks = 0. As a general rule of
+ing the Cauchy theorem, the deformation of the path                 thumb, for g larger but close the PT symmetry break-
+of the integral along a suitable contour which crosses a            ing threshold, indicating by ks the quasi momentum on
+(dominant) saddle point ks of E(k) − kv in the com-                 the real axis with maximum growth rate, i.e. that max-
+plex plane, along the direction of the steepest descent             imizes Im(E(k)) for k real, the PT symmetry breaking
+[43–45]. The asymptotic behavior of the integral is then            is absolute if the group velocity vg at k = ks , given by
+given by the value of the exponential part of the inte-             vs = (dRe(E)/dk)ks , vanishes, whereas is it expected
+grand calculated at the saddle point. More precisely, for           to be convective for a nonvanishing (and possibly large)
+a saddle point of order n ≥ 2, i.e. for which E(k) =                value of vs . Physically, the latter regime corresponds to
+E(ks ) + v(k − ks ) + (dn E/dk n )ks (k − ks )n + o((k − ks )n ),   the case where, owing to a non-vanishning group veloc-
+for t → ∞ one has [60]                                              ity, the unstable growing Bloch-Floquet mode is advected
+                        F (ks )
+                                                 
+                                                  1                 away, for an observer at rest, fast enough that it decays
+                                          1/n
+       ψ1 (t) ∼      n      n     1/n
+                                      (n!) Γ                        in time when observed at a fixed spatial position.
+                |t(d E/dk )ks |                   n
+              × exp[itvks ± iπ/(2n)] exp[−itE(ks )] (25)
+where the saddle point ks in the complex plane is deter-
+mined from the equation
+                                                                    B.    Absolute and convective PT symmetry breaking
+                                                                       for the non-Hermitian Rice-Mele Hamiltonian
+                       dE
+                               = v.                 (26)
+                       dk ks
+                                                                       In this subsection we describe in details the nature of
+The decay or secular growth of ψ1 (t) thus depends on the           the PT symmetry breaking for the extended Rice-Mele
+sign of the imaginary part of E(k) at the saddle point              Hamiltonian defined by Eq.(3). As shown in Sec.II.A,
+k = ks . It can be readily shown that, for g > gth , there          the superlattice comprises two minibands, with disper-
+is always a velocity v = vs for which the solution ks to            sion relations E± (q) and corresponding Bloch-Floquet
+Eq.(26) is real-valued and corresponds to the maximum               modes defined by Eqs.(7) and (4,8), respectively. Af-
+growth rate [i.e. the maximum of Im(E(k)) > 0], so                  ter setting ψ(n, t) = (an (t), bn (t))T , let us consider the
+that along the ray x = vs t the amplitude ψ1 (t) shows              propagation of an initial wave packet ψ(n, 0) in the lat-
+a secular growth. To determine whether the symme-                   tice, which is assumed to be given by a superposition
+try breaking is either convective or absolute, we should            of Bloch-Floquet modes belonging to the two minibands
+consider the asymptotic behavior of ψ1 (t) for v = 0,               with spectral functions F± (q). The evolved wave packet
+                                                                                                                               7
+
+
+
+
+                                                                  FIG. 5. (Color online). Numerically-computed quasi-energy
+                                                                  minibands E± (q) for the ac-dc driven lattice model [Eqs.(10)
+FIG. 4. (Color online). Numerically-computed wave packet
+                                                                  and (11)] for increasing values of the modulation frequency ω:
+evolution (snapshots of |ψ(n, t)|2 ) for the Rice-Mele Hamilto-
+                                                                  (a) ω = 6, (b) ω = 15, and (c) ω = 150. The other parameter
+nian Eq.(3) in (a) convective, and (b) absolute PT symmetry
+                                                                  values are given in the text. In (d) the energy minibands of
+breaking regimes. The lower panels show the detailed tem-
+                                                                  the static Rice-Mele lattice are shown, that correspond to the
+poral evolution of the occupation probabilities of the lattice
+                                                                  asymptotic limit ω → ∞. Solid curves refer to the real part
+sites an along the two rays indicated in the upper panels by
+                                                                  of E± (q), whereas the thin dotted curves to the imaginary
+the tilted solid curve (path n = vg t with maximum growth,
+                                                                  part of E± (q). For the sake of clearness, the imaginary part
+dashed curve) and by the vertical arrows (path n = 0, solid
+                                                                  of E± (q) has been multiplied by a factor of 10.
+curves). Parameter values are given in the text.
+
+
+at time t is then given by                                        estimated by the saddle point method and takes a form
+             Z 2π                                                 similar to the one given by Eq.(25). According to the
+   ψ(n, t) =      dqF+ (q)φ+ (q) exp[iqn − iE+ (q)t]              analysis presented in Sec.III.A, the PT symmetry break-
+               0                                                  ing is thus convective if Im{E+ (qs )} ≤ 0 , whereas it is
+              Z 2π
+                                                                  absolute for Im{E+ (qs )} > 0, where qs is the dominant
+          +          dqF− (q)φ− (q) exp[iqn − iE− (q)t]   (27)    saddle point obtained from the equation (dE+ /dq)qs = 0,
+               0
+                                                                  i.e.
+where we have set φ± (q) = (A± (q), B± (q))T . As
+shown in Sec.II.A, PT symmetry breaking occurs when                  2ρ                                        sin qs
+                                                                        (cos ϕ sin qs sin ϕ cos qs ) =                        .
+the gain/loss parameter g is increased to overcome the               κσ                                −2 + 2κσ(1 + cos qs )
+threshold value gth = |κ − σ|. Correspondingly, complex                                                                    (29)
+conjugate energies appear for a wave number q close to            In Eq.(29) we have set 2 = g 2 − gth   2
+                                                                                                            , which provides a
+q0 = π [see Fig.2(c)]. Note that, since Im{E(q)} ≥ 0 for          measure of the distance from the PT symmetry breaking
+one miniband and Im{E(q)} ≤ 0 for the other miniband,             point. To simplify our analysis, let us consider the case
+one of the two integrals on the right hand side of Eq.(27)        where the gain/loss parameter g is larger but close to its
+decays toward zero as t → ∞, and therefore we can limit           threshold value gth , so that 2 is a small quantity. In this
+to consider the contribution arising from the other inte-         case the solutions to Eq.(29) can be determined analyt-
+gral involving unstable modes. Assuming, for the sake             ically by an asymptotic analysis in the small parameter
+of definiteness, Im{E+ (q)} ≥ 0 and Im{E− (q)} ≤ 0, one           . The calculations are detailed in the Appendix B. The
+has                                                               main result of the calculations is that the PT symmetry
+             Z 2π                                                 breaking is convective for
+   ψ(n, t) ∼      dqF+ (q)φ+ (q) exp[iqn − iE+ (q)t] (28)                                           √
+               0                                                                          |vg | >       σκ                 (30)
+as t → ∞. The asymptotic form of the integral on the                                                                      √
+right hand side of Eq.(28) along the ray n = vt can be            whereas it is absolute in the opposite case |vg | ≤         σκ,
+                                                                                                                            8
+
+                                                                   packet in the Rice-Mele lattice with advective term (ρ 6=
+                                                                   0, ϕ 6= 0, π), showing the transition from convective
+                                                                   [Fig.4(a)] to absolute [Fig.4(b)] PT symmetry break-
+                                                                   ing. The numerical results are obtained by solving the
+                                                                   coupled-mode equations (1) and (2) using an accurate
+                                                                   fourth-order variable-step Runge-Kutta method assum-
+                                                                   ing as an initial condition a Gaussian wave packet with
+                                                                   carrier wave number q0 = π at lattice sites an solely,
+                                                                   namely an (0) = exp[−2(n/w)2 + iq0 n] and bn (0) = 0,
+                                                                   where w is the size of the wave packet. Such an initial
+                                                                   condition mainly excites (unstable) Bloch-Floquet modes
+                                                                   with imaginary energy at wave numbers q close to the
+                                                                   most critical one q = q0 = π. Parameter values used in
+                                                                   the simulations are κ = σ = 1 (corresponding to gth = 0),
+                                                                                                                √ ρ = 0.3 in
+                                                                   ϕ = π/2, g = 0.05 and ρ = 0.7 in Fig.4(a), and
+                                                                   Fig.4(b). In Fig.4(a), the condition |vg | > σκ is satis-
+                                                                   fied and, according to the analysis of Sec.III.B, the sym-
+                                                                   metry breaking is of convective nature. In fact, while the
+                                                                   wave packet |ψ(t)|2 secularly grows along the ray n = vg t,
+                                                                   it decays when observed at a fixed spatial position (e.g.
+                                                                   n = 0), as shown in the lower panel of Fig.4(a). Con-
+                                                                   versely, in Fig.4(b) the advective term in the Rice-Mele
+                                                                                                                        √
+                                                                   Hamiltonian is lowered so that |vg | is smaller than σκ:
+                                                                   in this case the symmetry breaking is absolute, as clearly
+FIG. 6. (Color online). Numerically-computed wave packet
+                                                                   shown in the lower panel of Fig.4(b).
+evolution (snapshots of |ψn (t)|2 ) for the ac-dc-driven lattice   A similar transition from absolute to convective PT
+model in (a) convective, and (b) absolute PT symmetry              symmetry-breaking for increasing advection is observed
+breaking regimes. The lower panels show the detailed tem-          in the ac-dc driven lattice model of Fig.1(b) presented
+poral evolution of the occupation probabilities of the lattice     in Sec.II.B. As shown in the Appendix A, the dynam-
+sites an along the two paths indicated in the upper panels by      ical properties of the ac-dc driven lattice at discretized
+the tilted solid curve (path n = vg t with maximum growth,         times τ = 0, T, 2T, ... can be mapped into the ones of a
+dashed curve) and by the vertical arrows (path n = 0, solid        static lattice with an energy band structure that is de-
+curves). Parameter values are given in the text.                   termined by the quasi-energy spectrum E(q) of the ac-dc
+                                                                   driven lattice. In particular, at large modulation fre-
+                                                                   quencies the driven lattice model, defined by Eqs.(A1)
+where vg = −2ρ sin ϕ is the group velocity at the symme-           and (A2), exactly reproduces the Rice-Mele model with
+try breaking point of the most unstable mode with wave             effective hopping rates κ, σ, ρ and phase ϕ given by
+number q = π [see Eq.(9)]. Hence, as expected, a suf-              Eqs.(18-21). As an example, in Figs.5(a-c) we show the
+ficiently large advective term in the extended Rice-Mele           numerically-computed quasi energies of the two mini-
+Hamiltonian can change the PT symmetry breaking from               bands (real and imaginary parts) for the ac-dc driven
+absolute to convective. Note that for ρ = 0 or ρ 6= but            lattice above the PT symmetry breaking point for pa-
+real-valued, the symmetry breaking is always absolute.             rameter values κ1 = κ2 = 2.1124, κ3 = 1.4784, M = 1,
+As discussed in the next subsection, an important phys-            Γ = 1.109, φ = −π/4, g = 0.05 and for increasing val-
+ical implication of the convective (rather than absolute)          ues of the modulation frequency ω. Parameter values
+PT symmetry breaking is that the unbroken PT phase                 have been chosen such as to reproduce, at large modu-
+can be restored in the convectively regime by making the           lations frequencies, the static Rice-Mele lattice with pa-
+region of alternating gain and loss sites in the lattice spa-      rameters as in Fig.4(b). The quasi-energies have been
+tially limited rather than extended.                               obtained by numerical computation of the Floquet expo-
+                                                                   nents for the eigenvalue problem defined by Eqs.(A6) and
+                                                                   (A7) given in the Appendix. For comparison, in Fig.5(d)
+                  C.    Numerical results                          the minibands of the static Rice-Mele lattice with pa-
+                                                                   rameters of Fig.4(b) are also depicted. According to the
+                                                                   theoretical analysis, in the high modulation regime the
+   We checked the predictions of the theoretical analy-            quasi-energy spectrum of the driven lattice asymptoti-
+sis and the transition form absolute to convective PT              cally reproduces the spectrum of the static Rice-Mele
+symmetry breaking induced by advection for both the                model [compare Fig.5(c) and (d)]. At low or moderate
+static Rice-Mele lattice of Fig.1(a) and the ac-dc driven          values of the modulation frequency ω, deviations from the
+lattice of Fig.1(b) by direct numerical simulations. As            two models can be clearly appreciated [compare Figs.5(a)
+an example, in Fig.4 we depict the evolution of a wave
+                                                                                                                                  9
+
+                                                                  convectively unstable regime PT symmetry (i.e. an en-
+                                                                  tirely real-valued energy spectrum) may be restored when
+                                                                  the gain/loss region in the lattice is spatially limited.
+                                                                  We checked such a prediction by considering the Rice-
+                                                                  Mele lattice Hamiltonian (3) with a spatially-dependent
+                                                                  gain/loss term vanishing at infinity, namely
+                                                                               X∞                                 
+                                                                     Ĥ = −          κâ†n b̂n + σâ†n b̂n−1 + H.c.
+                                                                              n=−∞
+                                                                             Xh                                           i
+                                                                         −          ρ exp(iϕ) â†n ân+1 + b̂†n b̂n+1 + H.c.    (31)
+                                                                              n
+                                                                                  ∞
+                                                                                  X                             
+FIG. 7. (Color online). Numerically-computed energy spec-                +i               gn â†n ân − b̂†n b̂n
+trum (real and imaginary parts) of the Rice-Mele Hamiltonian                  n=−∞
+(32) with a finite number of unit cells with gain and loss re-    where gn → 0 as n → ∞. In particular, we numeri-
+gions for (a) ρ = 0, and (b) ρ = 2, ϕ = π/2. The other            cally computed the energy spectrum of Ĥ by considering
+parameter values are: κ = σ = 1 and g = 0.5. For the sake of
+                                                                  a square-wave profile of gn , i.e. gn = g for |n| ≤ Ng /2
+clearness the imaginary part of the energies (square points)
+are multiplied by a factor of 2. The total number of unit cells
+                                                                  and gn = 0 otherwise. This case corresponds to a central
+of the lattice is N + 1 = 301, and the eigenvalues are ordered    lattice section comprising (Ng + 1) dimers with gain and
+for increasing values of the real part of the energy. The num-    loss (i.e. locally non-Hermitian), and and abrupt transi-
+ber of dimers with loss and gain is Ng + 1 = 21, and they are     tion to two outer lattice sections with locally-Hermitian
+located at the center of the lattice.                             dimers (i.e. gn = 0). In the numerical simulations, the
+                                                                  total number of unit cells (N + 1) is finite, corresponding
+                                                                  to truncation of the outer lattice sections. As an exam-
+and (b) with Fig.5(d)]. In particular, the driven lattice         ple, in Fig.7 we show the numerically-computed energies
+model at low modulation frequencies shows a wider range           of the truncated lattice described by the Hamiltonian
+of wave numbers with complex energies, and the real part                      N/2
+                                                                              X                                            
+of the quasi energies for the two minibands are not de-           Ĥ = −                      κâ†n b̂n + σâ†n b̂n−1 + H.c.
+generate. Nevertheless, the transition from convective to                    n=−N/2
+absolute symmetry breaking, which is basically related                       N/2
+to the value of the group velocity (the derivative of the                    X       h                                      i
+                                                                     −                ρ exp(iϕ) â†n ân+1 + b̂†n b̂n+1 + H.c. (32)
+real part of the quasi-energy) of the unstable mode at the
+                                                                         n=−N/2
+symmetry breaking point, can be observed even at mod-
+                                                                                  Ng /2
+erate modulation frequencies. This is shown, as an exam-                          X                                  
+ple, in Fig.6, where we depict the numerically-computed              + ig                       â†n ân − b̂†n b̂n
+evolution of the same initial Gaussian wave packet as                        n=−Ng /2
+in Fig.4 but in the ac-dc driven lattice for a modula-            for Ng = 10, N = 300 and for parameter values corre-
+tion frequency ω = 15 and for κ3 = 1.4784 [Fig.6(a)],             sponding to absolute [Fig.7(a)] and convective [Fig.7(b)]
+corresponding to a convective symmetry breaking, and              PT symmetry breaking in the extended (i.e. N, Ng →
+κ3 = 0.6336 [Fig.6(b)], corresponding to absolute PT              ∞) limit. Note that, within numerical accuracy, the en-
+symmetry breaking.                                                ergy spectrum is entirely real-valued in the convective
+   As a final comment, it is worth discussing a physi-            regime [Fig.7(b)], whereas pairs of complex-conjugate en-
+cally relevant implication of convective versus absolute          ergies persist in the absolute regime [Fig.7(a)]. It should
+PT symmetry breaking. In the convectively unstable                be noted, however, that restoring of the PT symme-
+regime, the growing wave packet drifts in the laboratory          try in the convective regime is not a strict rule, since
+reference frame fast enough that locally (i.e. at a fixed         the interfaces from the outer lattice regions to the in-
+spatial position) it is observed to decay in spite of its         ner (non-Hermitian) lattice section might sustain local-
+growth in a moving reference frame (see Figs.3 and 4).            ized (interface) modes with imaginary energies, which
+Let us now consider a lattice with a spatially confined           can not be predicted by our simple picture. Moreover, it
+(rather than infinitely extended) region of unit cells with       is expected that restoring of the PT symmetry depends
+gain and loss. In the convective regime, advection pushes         on the choice of the profile gn ; for example a smooth
+the wave packet far from the ”non-Hermitian” region of            (rather than sharp) transition from the inner (locally
+the lattice, and hence after a transient the wave packet          non-Hermitian) to the outer (locally Hermitian) regions
+ceases to grow. Conversely, in the absolute symmetry              is expected to avoid the appearance of interface states.
+breaking regime it is expected to grow indefinitely even          Symmetry breaking in case of inhomogeneous gain/loss
+for a spatially-finite extension of unit cells with gain and      parameter gn would require a further study, however this
+loss. Such a simple physical picture suggests that in the         goes beyond the scope of the present work.
+                                                                                                                        10
+
+                 IV.   CONCLUSIONS                             of noise-sustained structures [46]) might be envisaged for
+                                                               convective PT symmetry breaking in presence of classical
+                                                               or quantum noise [30].
+   In this work we have introduced the concepts of convec-
+tive and absolute PT symmetry breaking for wave trans-
+port in periodic complex potentials, inspired by the hy-
+                                                                Appendix A: Floquet analysis of the ac-dc driven
+drodynamic concepts of convective and absolute instabil-
+                                                                    lattice and effective static lattice model
+ities in open flows. In particular, we have investigated an-
+alytically and numerically the transition from absolute to
+convective PT symmetry breaking in two tight-binding             In this Appendix we present a Floquet analysis of the
+lattice models: a non-Hermitian extension of the Rice-         driven lattice model defined by Eqs.(10) and (11) with
+Mele dimerized lattice, originally introduced to model         time-periodic coefficients and show that, at discretized
+conjugated diatomic polymers, and an ac-dc driven lat-         times, it behaves like an effective static lattice with a
+tice, which reproduces the Rice-Mele model in the large        band structure that is determined by the quasi-energy
+modulation frequency limit. In the context of spatially-       spectrum of the driven lattice. To this aim, let us note
+extended dissipative dynamical systems, PT symmetry            that, after the gauge transformation defined by Eqs.(15)
+breaking can be viewed as a phase transition from a            and (16) given in the text, the evolution of the amplitudes
+marginally stable state (the unbroken PT phase) to an          an (t), bn (t) is governed by the following linear system of
+unstable state (the broken PT phase). The instability          equations
+arises because of the appearance of pairs of complex-               dan
+conjugate energies in the broken PT phase. The dis-               i     = −κ1 F (t)bn − κ2 G(t)bn−1 − κ3 H(t)an+1
+tinction between convective and absolute PT symmetry                 dt
+breaking arises when considering the evolution of a wave                − κ3 H ∗ (t)an−1 + igan                     (A1)
+packet in the broken PT phase: while in the absolute                dbn
+                                                                  i     = −κ1 F ∗ (t)an − κ2 G∗ (t)an+1 − κ3 H(t)bn+1
+symmetry breaking case the wave packet amplitude ob-                 dt
+served at a fixed spatial position secularly grows in time,             − κ3 H ∗ (t)bn−1 − igbn                     (A2)
+in the convective symmetry breaking case the amplitude
+grows in a reference frame moving at some drift velocity,      with time-dependent coefficients F (t), G(t) and H(t)
+however it decays when observed at a fixed spatial posi-       given by
+tion, i.e. for an observer at rest. A convective regime is
+                                                                         F (t) = exp [iβ + iΘ(t)]
+generally found when the unstable modes have a group
+(drift) velocity large enough that at a fixed spatial po-                G(t) = exp [iβ − iϕ + iΘ(t) − iΦ(t)]         (A3)
+sition the wave packet decay due to the drift overcomes                  H(t) = exp [iϕ + iΦ(t)] .
+the growth due to the instability. The nature (either ab-
+solute or convective) of the PT symmetry breaking is           In the previous equations, the functions Θ(t) and Φ(t)
+basically determined by the sign of the imaginary part         and constant parameters ϕ and β are defined by Eqs.(17)
+of the energy (for static lattices) or quasi-energy (for       and (18) given in the text. For the driving terms Fx , Fy
+periodically-driven lattices) at the dominant band sad-        defined by Eq.(13), one has explicitly
+dle point in complex plane. An interesting application of
+the concepts of convective and absolute symmetry break-        F (t) = exp [iM φ + iM ωt − iΓ sin(ωt + φ)]
+ing is found when considering a spatially-limited region       G(t) = exp [−iM (φ + π) + iM ωt + iΓ sin(ωt − φ)] (A4)
+of gain/loss in the system, i.e when the periodicity of the    H(t) = exp [iM (2φ + π) − 2iΓ cos φ sin(ωt)] .
+system is broken and the imaginary part of the poten-
+tial is confined to a limited region of space. Owing to        where we assumed the resonance condition U = M ω.
+the fast drift of a wave packet in the convective regime,      Since the coefficients F (t), G(t) and H(t) are periodic
+after a transient the wave packet escapes from the imag-       in time with period T = 2π/ω, the solution to Eqs.(A1)
+inary potential region and thus it ceases to grow. This        and (A2) can be obtained from Floquet theory of liner
+means that the instability is only transient, i.e. we expect   periodic systems. Specifically, the general solution to
+that PT symmetry is restored in the convective regime          Eqs.(A1) and (A2) is given by an arbitrary superposi-
+when the imaginary potential is spatially confined. This       tion of Bloch-Floquet states
+is not the case of the absolute symmetry breaking regime,                                 
+where the broken PT phase is expected to persist even                 an (q, t)      A(q, t)
+                                                                                 =             exp [iqn − iE(q)t] (A5)
+for a spatially-limited imaginary potential. Other possi-             bn (q, t)      B(q, t)
+ble applications and developments of the hydrodynamic
+concepts of convective and absolute instabilities can be       where q is the wave number (quasi-momentum), which
+foreseen into the rapidly growing field of wave transport      varies in the range (0, 2π), E(q) is the quasi-energy, with
+in PT -symmetric quantum and classical systems. For            −ω/2 ≤ E(q) < ω/2, and A(q, t), B(q, t) are periodic in
+example, like for hydrodynamic and dissipative optical         time with period T . The quasi-energy E(q) and corre-
+systems [43, 46], interesting effects (like the appearance     sponding Floquet states (A(q, t), B(q, t))T are found by
+                                                                                                                          11
+
+solving the eigenvalue problem                                   namely one can set
+               dA                                                      E(q)A ≃ −κ3 [hHi exp(iq) + hH ∗ i exp(−iq)]A
+    E(q)A = −i    − κ3 [H exp(iq) + H ∗ exp(−iq)]A
+               dt                                                            + igA − [κ1 hF i + κ2 hGi exp(−iq)]B      (A9)
+          + igA − [κ1 F + κ2 G exp(−iq)]B         (A6)                                                 ∗
+                                                                       E(q)B ≃ −κ3 [hHi exp(iq) + hH i exp(−iq)]B
+               dB
+    E(q)B = −i    − κ3 [H exp(iq) + H ∗ exp(−iq)]B                           − igB − [κ1 hF ∗ i + κ2 hG∗ i exp(iq)]A. (A10)
+               dt
+          − igB − [κ1 F ∗ + κ2 G∗ exp(iq)]A       (A7)           where h...i denotes the time average.
+                                                                                                   P∞Using the identity of
+                                                                 Bessel functions exp(iΓ sin x) = n=−∞ Jn (Γ) exp(inx),
+in the interval (0, T ) with the periodic boundary condi-        from Eq.(A4) one readily obtains
+tions A(q, T ) = A(q, 0) and B(q, T ) = B(q, 0). Floquet
+theorem ensures that the quasi-energy spectrum com-                 hF i = hGi = JM (Γ), hHi = J0 (2Γ cos φ) exp(iϕ)
+prises two branches E(q) = E± (q), like for the static                                                                (A11)
+lattice model discussed in Sec.II.A, with corresponding          where ϕ = M (π + 2φ). A comparison of Eqs.(A9),(A10)
+Floquet states φ± (q, t) = (A± (q, t), B± (q, t))T . Note        with Eq.(5) given in the text shows that, in the large
+that, if the dynamics of the system defined by Eqs.(A1)          modulation limit, the ac-dc driven lattice described by
+and (A2) is observed at discretized times τ = 0, T, 2T, ...,     Eqs.(A1) and (A2) effectively describes the static Rice-
+from Eq.(A5) and owing to the periodicity of the func-           Mele lattice [Eqs.(1) and (2) given in the text], where the
+tions A(q, t) and B(q, t) it follows that it is equivalent       effective hopping rate κ, σ and ρ are given by Eqs.(19-21)
+to the dynamics of a static lattice with two minibands           and the phase ϕ by Eq.(18).
+whose dispersion relations E± (q) are given by the quasi-
+energies of the periodic system. In fact, after setting
+ψ(n, t) = (an (t), bn (t))T , an initial wave packet, obtained   Appendix B: Determination of the saddle point for
+from the superposition of Bloch-Floquet states with ar-               the extended Rice-Mele lattice model
+bitrary spectra F± (q), evolves in time according to the
+relation                                                           In this Appendix we calculate the saddle points qs , i.e.
+            Z 2π                                                 the roots qs of Eq.(29) given in the text, which determine
+  ψ(n, t) =       dqF+ (q)φ+ (q, t) exp[iqn − iE+ (q)t]          the convective or absolute nature of the PT symmetry
+              0                                                  breaking for the non-Hermitian Rice-Mele Hamiltonian
+             Z 2π
+                                                                 (3). To this aim, it is worth introducing the variables
+         +          dqF− (q)φ− (q, t) exp[iqn − iE− (q)t].(A8)
+              0                                                  Xs = cos qs and Ys = sin qs . After some algebra, from
+                                                                 Eq.(29) it follows that Xs and Ys are the roots (in the
+If the evolution of the wave packet is observed at dis-          complex plane) of following system of algebraic equations
+cretized times τ = lT with l = 0, 1, 2, 3, ..., since
+φ± (q, lT ) = φ± (q, 0) is independent of τ , from Eq.(A8)           Xs2 + Ys2 = 1                                        (B1)
+it follows that ψ(n, τ ) shows the same evolution as the         
+                                                                     κσ
+                                                                        2
+                                                                           Ys2 = cos2 ϕYs2 + sin2 ϕXs2 − 2 cos ϕ sin ϕXs Ys
+                                                                                                                            
+one of a wave packet in a static dimerized lattice with en-
+ergy band dispersion given by the quasi-energies E± (q) of           2ρ
+the time-periodic lattice [compare Eq.(A8) with Eq.(27)                       × (−2 + 2κσ + 2κσXs ).                     (B2)
+given in the text]. Therefore, all the dynamical aspects of
+the time-periodic system defined by Eqs.(A1) and (A2),           To simplify the analysis, let us consider the case where
+including the onset of PT symmetry breaking and its              the gain/loss parameter g is larger but close to its thresh-
+convective or absolute nature, can be derived from an
+                                                                                                2
+                                                                 old value gth , so that g 2 − gth = 2 is a small quantity.
+equivalent static lattice with a band structure given by         Note that, for  → 0, a solution to Eqs.(B1) and (B2) is
+the quasi-energy band structure of the original time-            Xs = −1 and Ys = 0, corresponding to qs = π, i.e. to
+periodic system. In particular, as discussed in Sec.III the      the wave number where the most unstable mode arises
+convective or absolute nature of the symmetry breaking           at the PT symmetry breaking threshold. For 2 > 0, we
+will be determined by the imaginary part of the quasi-           look for a solution to Eqs.(B1) and (B2) in the form of
+energies at the dominant saddle point.                           power series
+   The determination of the quasi-energy spectrum E± (q)                                    α2   α4
+generally requires to resort to a numerical analysis of                          Xs = −1 +     −    + ...               (B3)
+                                                                                            2    4!
+Eqs.(A6) and (A7). An approximate analytical form the
+                                                                                            α3   α5
+quasi energies can be obtained, however, in the large fre-                        Ys = −α +    −    + ... ,             (B4)
+quency limit. In fact, assuming κ1 , κ2 , κ3 , g  ω, the                                   3!   5!
+change of the amplitudes A and B over one oscillation            where α = qs − π is a small amplitude of order γ with
+cycle are small, so that in Eqs.(A6) and (A7) we may ne-         γ > 0 to be determined. Note that, at leading order in
+glect the derivative terms (dA/dt), (dB/dt) and replace          α, the energy E+ (qs ) is given by
+the functions F (t), G(t), H(t) with their average values                                            p
+over the oscillation cycle (rotating-wave approximation),          E+ (qs ) ≃ −2ρ cos ϕ − 2ρ sin ϕα + κσα2 − 2 . (B5)
+                                                                                                                            12
+
+Note also that, with the Ansatz (B3) and (B4), Eq.(B1)           obtains α ∼ 2/3 , i.e. γ = 2/3, and α satisfies the cubic
+is automatically satisfied for any α. The small complex          equation
+amplitude α can be determined by substitution of
+Eqs.(B3) and (B4) into Eq.(B2) and letting equal the                                            sin ϕ2
+terms of lowest order on the left and right hands of                                  α3 = −             .               (B7)
+                                                                                               2κσ cos ϕ
+the equations so obtained. Three cases should be
+distinguished.
+                                                                 Two of the three roots of such an equation are complex-
+           √                                                     valued, and correspondingly one can readily shown from
+          6
+(1) |vg | =  σκ, where vg = −2ρ cos ϕ.
+In this case Eq.(B2) is satisfied at leading order for           Eq.(B5) that a positive imaginary part for the energy
+α ∼  (i.e. γ = 1), namely one obtains                           E+ (qs ) arises from one of the two complex roots. In√fact,
+                                                                 since 2 is of higher order than α2 and 2ρ cos ϕ = κσ,
+                                2 vg2                           from Eq.(B5) one has Im{E+ (qs )} ≃ 2vg Im(α). There-
+                      α2 =                .              (B6)    fore in this case the PT symmetry breaking is absolute.
+                             κσ(vg2 − κσ)
+                                                                             √
+                                                                 (3) |vg | =    σκ and ϕ = ±π/2. In this case one
+For vg2 > σκ, the two roots α of Eq.(B6) are real-valued,
+                                                                 has α ∼ 1/2 , i.e. γ = 1/2, and α satisfies the quartic
+and correspondingly the imaginary part of E+ (qs ),
+                                                                 equation
+with qs = π + α, vanishes [see Eq.(B5)]. Therefore, for
+vg2 > σκ one has ψ(n, t) → 0 as t → ∞ along the ray
+n/t = 0, i.e. the PT symmetry breaking is convective.                                             2
+                                                                                         α4 = −      .                   (B8)
+Conversely, for vg2 < σκ according to Eq.(B6) the                                                 κσ
+amplitude α is purely imaginary, and correspondingly
+for one of the two roots the imaginary part of E+ (qs ) is       The four roots of such equation are complex-valued, two
+positive according to Eq.(B5). In this case |ψ(n, t)| → ∞        with positive and two with negative imaginary parts.
+as t → ∞ along the ray n/t = 0, i.e. the PT symmetry             Correspondingly, like in the previous case a positive
+breaking is absolute.                                            imaginary part for the energy E+ (qs ) does appear be-
+               √                                                 cause Im{E+ (qs )} ≃ 2vg Im(α). Therefore the PT sym-
+(2) |vg | =        σκ and ϕ 6= ±π/2.          In this case one   metry breaking is absolute like in the previous case.
+
+
+
+
+ [1] N. Moiseyev, Non-Hermitian Quantum Mechanics (Cam-               Stefani, J. Phys. A: Math. Theor. 40, F169 (2007).
+     bridge University Press, London, Cambridge, 2011).          [14] M. B. Plenio and P. L. Knight, Rev. Mod. Phys. 70, 101
+ [2] N. Moiseyev, Phys. Rep. 302, 212 (1998); J.G. Muga,              (1998).
+     J.P. Palao, B. Navarro, and I.L. Egusquiza Phys. Rep.       [15] C. M. Bender, S. F. Brandt, J.-H. Chen, and Q.Wang,
+     395, 357 (2004); I. Rotter, J. Phys. A: Math. Theor. 42,         Phys. Rev. D 71, 025014 (2005).
+     153001 (2009).                                              [16] J. Schindler, A. Li, M.C. Zheng, F.M. Ellis, and T. Kot-
+ [3] C. Keller, M. K. Oberthaler, R. Abfalterer, S. Bernet,           tos, Phys. Rev. A 84, 040101 (2011); H. Ramezani, J.
+     J. Schmiedmayer, and A. Zeilinger, Phys. Rev. Lett. 79,          Schindler, F. M. Ellis, U. Günther, and T. Kottos, Phys.
+     3327 (1997).                                                     Rev. A 85, 062122 (2012); Z. Lin, J. Schindler, F.M.
+ [4] R. Stützle, M.C. Göbel, T. Hörner, E. Kierig, I.              Ellis, and T. Kottos, Phys. Rev. A 85, 050101 (2012).
+     Mourachko, M.K. Oberthaler, M.A. Efremov, M.V. Fe-          [17] A. Ruschhaupt, F. Delgado, and J.G. Muga, J. Phys. A:
+     dorov, V.P. Yakovlev, K.A.H. van Leeuwen, and W.P.               Math. Gen. 38, L171 (2005).
+     Schleich, Phys. Rev. Lett. 95, 110405 (2005).               [18] R. El-Ganainy, K.G. Makris, D. N. Christodoulides, and
+ [5] M.S. Rudner and L.S. Levitov, Phys. Rev. Lett. 102,              Z. H. Musslimani, Opt. Lett. 32, 2632 (2007).
+     065703 (2009).                                              [19] S. Klaiman, U. Günther, and N. Moiseyev, Phys. Rev.
+ [6] E. M. Graefe, H. J. Korsch, and A. E. Niederle, Phys.            Lett. 101, 080402 (2008).
+     Rev. Lett. 101, 150408 (2008); Phys. Rev. A 82, 013629      [20] K. G. Makris, R. El-Ganainy, D.N. Christodoulides, and
+     (2010).                                                          Z. H. Musslimani, Phys. Rev. Lett. 100, 103904 (2008).
+ [7] A. Kostenbauder, Y. Sun, and A. E. Siegman, J. Opt.         [21] S. Longhi, Phys. Rev. Lett. 103, 123601 (2009).
+     Soc. Am. A 14, 1780 (1997).                                 [22] A. Mostafazadeh, Phys. Rev. Lett. 102, 220402 (2009).
+ [8] C. M. Bender, Rep. Prog. Phys. 70, 957 (2007).              [23] A. Guo, G. J. Salamo, D. Duchesne, R. Morandotti, M.
+ [9] C. M. Bender and S. Boettcher, Phys. Rev. Lett. 80,              Volatier-Ravat, V. Aimez, G. A. Siviloglou, and D. N.
+     5243 (1998).                                                     Christodoulides, Phys. Rev. Lett. 103, 093902 (2009).
+[10] A. Mostafazadeh, J. Phys. A 36, 7081 (2003).                [24] C. E. Rüter, K. G. Makris, R. El-Ganainy, D. N.
+[11] C.M. Bender, D. C. Brody, and H. F. Jones, Phys. Rev.            Christodoulides, M. Segev and D. Kip, Nat. Phys. 6, 192
+     Lett. 93, 251601 (2004).                                         (2010).
+[12] A. Mostafazadeh, J. Math. Phys. 43, 205 (2002).             [25] S. Longhi, Phys. Rev. Lett. 105, 013903 (2010).
+[13] U. Guenther, F. Stefani, and M. Znojil, J. Math. Phys.      [26] L. Feng, M. Ayache, J. Huang, Y.L. Xu, M.H. Lu, Y.F.
+     46, 063504 (2005); U. Guenther, B. F. Samsonov, and F.           Chen, Y. Fainman, and A. Scherer, Science 333, 729
+                                                                                                                            13
+
+     (2011).                                                    [48] The Hamiltonian (3) reduces to the Rice-Mele model for
+[27] S. V. Dmitriev, A. A. Sukhorukov, and Yu. S. Kivshar,           ρ = 0 and after the substitution g → ig, which makes the
+     Opt. Lett. 35, 2976(2010); A.A. Sukhorukov, Z. Xu, and          Hamiltonian Hermitian.
+     Y.S. Kivshar, Phys. Rev. A 82, 043818 (2010); N. V.        [49] M. Atala, M. Aidelsburger, J.T. Barreiro, D. Abanin, T.
+     Alexeeva, I. V. Barashenkov, A.A. Sukhorukov, and Y.S.          Kitagawa, E. Demler, and I. Bloch, arXiv:1212.0572
+     Kivshar, Phys. Rev. A 85, 063837 (2012).                   [50] Z. H. Musslimani, K. G. Makris, R. El-Ganainy, and
+[28] A. Regensburger, C. Bersch, M.-A. Miri, G. On-                  D. N. Christodoulides, J. Phys. A 41, 244019 (2008);
+     ishchukov, D. N. Christodoulides, and U. Peschel, Nature        S.V. Suchkov, S.V. Dmitriev, B.A. Malomed, and Y.S.
+     488, 167 (2012).                                                Kivshar, Phys. Rev. A 85, 033825 (2012); G. Della Valle
+[29] L. Feng, Y.-L. Xu, W.S. Fegadolli, M.-H. Lu, J.E.B.             and S. Longhi, Phys. Rev. A 87, 022119 (2013); I. V.
+     Oliveira, V.R. Almeida, Y.-F. Chen, and A. Scherer, Na-         Barashenkov, L. Baker, and N. V. Alexeeva, Phys. Rev.
+     ture Mat. 12, 108 (2013).                                       A 87, 033819 (2013).
+[30] H. Schomerus, Phys. Rev. Lett. 104, 233601 (2010); G.S.    [51] O. Bendix, R. Fleischmann, T. Kottos, and B. Shapiro,
+     Agarwal and K. Qu, Phys. Rev. A 85, 031802(R) (2012);           Phys. Rev. Lett. 103, 030402 (2009); S. Longhi, Phys.
+     G. Yoo, H.-S. Sim, and H. Schomerus, Phys. Rev. A 84,           Rev. B 80, 165125 (2009); G.L. Giorgi, Phys. Rev. B
+     063833 (2011).                                                  82, 052404 (2010); M.C. Zheng, D.N. Christodoulides,
+[31] A. Mostafazadeh, Phys. Rev. A 87, 012103 (2013).                R. Fleischmann, and T. Kottos, Phys. Rev. A 82, 010103
+[32] Z. Lin, H. Ramezani, T. Eichelkraut, T. Kottos, H. Cao,         (2010); S. Longhi, Phys. Rev. A 82, 032111 (2010); A.
+     and D. N. Christodoulides, Phys. Rev. Lett. 106, 213901         Szameit, M.C. Rechtsman, O. Bahat-Treidel, and M.
+     (2011).                                                         Segev, Phys. Rev. A 84, 021806 (2011); H. Ramezani,
+[33] S. Longhi, Phys. Rev. A 81, 022102 (2010).                      T. Kottos, V. Kovanis, and D.N. Christodoulides, Phys.
+[34] S. Longhi, J. Phys. A: Math. Theor. 44, 485302 (2011).          Rev. A 85, 013818 (2012).
+[35] E.-M. Graefe and H. F. Jones, Phys. Rev. A 84, 013818      [52] L. Jin and Z. Song, Phys. Rev. A 80, 052107 (2009); L.
+     (2011).                                                         Jin and Z. Song, Phys. Rev. A 84, 042116 (2011) ; X.
+[36] A. Mostafazadeh, Phys. Rev. A 87, 012103 (2013).                Z. Zhang, L. Jin, and Z. Song, Phys. Rev. A 85, 012106
+[37] H. Ramezani, T. Kottos, R. El-Ganainy, and D.N.                 (2012); L. Jin and Z. Song, Phys. Rev. A 85, 012111
+     Christodoulides, Phys. Rev. A 82, 043803 (2010).                (2012); W. H. Hu, L. Jin, Y. Li, and Z. Song Phys. Rev.
+[38] S. Longhi, G. Della Valle and K. Staliunas, Phys. Rev. A        A 86, 042110 (2012).
+     84, 042119 (2011).                                         [53] Y.N. Joglekar, C. Thompson, and G. Vemuri, Phys. Rev.
+[39] S. Longhi, Phys. Rev. A 82, 031801(R) (2010).                   A 83, 063817 (2011); D.D. Scott and Y.N. Joglekar,
+[40] Y.D. Chong, L. Ge, and A.D. Stone, Phys. Rev. Lett.             Phys. Rev. A 83, 050102 (2011); Y.N. Joglekar and J.L.
+     106, 093902 (2011).                                             Barnett, Phys. Rev. A 84, 024103 (2011); D.D. Scott and
+[41] A. Mostafazadeh, Phys. Rev. Lett. 102, 220402 (2009).           Y.N. Joglekar, Phys. Rev. A 85, 062105 (2012); H. Ve-
+[42] M.C. Cross and P.C. Hohenberg, Rev. Mod. Phys. 65,              muri and Y.N. Joglekar, Phys. Rev. A 87, 044101 (2013).
+     851 (1993).                                                [54] H. Cartarius and G. Wunner, Phys. Rev. A 86, 013612
+[43] P. Huerre and P.A. Monkewitz, Annu. Rev. Fluid Mech.            (2012).
+     22, 473 (1990).                                            [55] F. Dreisow, A. Szameit, M. Heinrich, T. Pertsch, S.
+[44] L. S. Hall and W. Heckrotte, Phys. Rev. 166, 120 (1968);        Nolte, and A. Tünnermann, Opt. Lett. 33, 2689 (2008).
+     R. J. Deissler, J. Stat. Phys. 40, 376 (1985); Physica     [56] A. Crespi, G. Corrielli, G. Della Valle, R. Osellame, and
+     (Amsterdam) 56D, 303 (1992).                                    S. Longhi, New J. Phys. 15, 013012 (2013).
+[45] G. Dee and J.S. Langer, Phys. Rev. Lett. 50, 383 (1983).   [57] S. Longhi, Laser Photon. Rev. 3, 243 (2009); I.L. Gara-
+[46] M. Santagiustina, P. Colet, M. San Miguel, and D. Wal-          novich, S. Longhi, A.A. Sukhorukov, and Y.S. Kivshar,
+     graef, Phys. Rev. Lett. 79, 3633 (1997); M. Santag-             Phys. Rep. 518, 1 (2012).
+     iustina, P. Colet, M. San Miguel, and D. Walgraef, Phys.   [58] S. Longhi, M. Marangoni, M. Lobino, R. Ramponi, P.
+     Rev. E 58, 3843 (1998); M. Taki, M. San Miguel, and M.          Laporta, E. Cianci, and V. Foglietti, Phys. Rev. Lett.
+     Santagiustina, Phys. Rev. E 61, 2133 (2000).                    96, 243901 (2006).
+[47] M. J. Rice and E. J. Mele, Phys. Rev. Lett. 49, 1455       [59] A. Joushaghani, R. Iyer, J.K.S. Poon, J.S. Aitchison,
+     (1982).                                                         C.M. de Sterke, J. Wan, and M.M. Dignam, Phys. Rev.
+                                                                     Lett. 103, 143903 (2009).
+                                                                [60] See, for instance: F. W. J. Olver, Asymptotics and Special
+                                                                     Functions (Academic, New York, 1974).
+

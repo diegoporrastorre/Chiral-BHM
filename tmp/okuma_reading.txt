@@ -1,0 +1,579 @@
+                                                      Boundary-dependent dynamical instability of bosonic Green’s function: Dissipative
+                                                      Bogoliubov-de Gennes Hamiltonian and its application to non-Hermitian skin effect
+                                                                                                            Nobuyuki Okuma1, ∗
+                                                                           1
+                                                                               Yukawa Institute for Theoretical Physics, Kyoto University, Kyoto 606-8502, Japan
+                                                                                                          (Dated: February 24, 2022)
+                                                                     The energy spectrum of bosonic excitations from a condensate is given by the spectrum of a
+                                                                  non-Hermitian Hamiltonian constructed from a bosonic Bogoliubov-de Gennes (BdG) Hamiltonian
+                                                                  in general even though the system is essentially Hermitian. In other words, two types of non-
+                                                                  Hermiticity can coexist: one from the bosonic BdG nature and the other from the open quantum
+arXiv:2202.07684v2 [cond-mat.mes-hall] 23 Feb 2022
+
+
+
+
+                                                                  nature. In this paper, we propose boundary-dependent dynamical instability. We first define the
+                                                                  bosonic dissipative BdG Hamiltonian in terms of Green’s function in Nambu space and discuss the
+                                                                  correct particle-hole symmetry of the corresponding non-Hermitian Hamiltonian. We then construct
+                                                                  a model of the boundary-dependent dynamical instability so that it satisfies the correct particle-
+                                                                  hole symmetry. In this model, an anomalous term that breaks the particle number conservation
+                                                                  represents the non-Hermiticity of the BdG nature, while a normal term is given by a dissipative
+                                                                  Hatano-Nelson model. Thanks to the competition between the two types of non-Hermiticity, the
+                                                                  imaginary part of the spectrum can be positive without the help of the amplification of the normal
+                                                                  part and the particle-hole band touching that causes the Landau instability. This leads to the
+                                                                  boundary-dependent dynamical instability under the non-Hermitian skin effect, -strong dependence
+                                                                  of spectra on boundary conditions for non-Hermitian Hamiltonians-, of the Bogoliubov spectrum.
+
+
+                                                                      I.       INTRODUCTION                              skin effect. Although the non-Hermiticity in the normal
+                                                                                                                         part does not correspond to an amplification, this model
+                                                        At low temperature, the excitations from a Bose-                 shows a dynamical instability [4] that occurs under the
+                                                     Einstein condensate are well described by a bosonic                 periodic boundary condition (PBC) and does not occur
+                                                     Bogoliubov-de Gennes (BdG) Hamiltonian [1–4]. As well               under the open boundary condition (OBC) for some pa-
+                                                     as the systems of boson particles such as cold atoms [4]            rameter region, without the help of a band touching be-
+                                                     and photons [5], the BdG Hamiltonian has been exten-                tween the particle and hole bands of Bogoliubov excita-
+                                                     sively studied in the systems of emergent bosonic exci-             tions. This result can be understood in terms of a compe-
+                                                     tations from ordered states such as the magnons [6] and             tition between an anomalous term representing the BdG
+                                                     phonons [7]. Remarkably, the excitation spectrum of a               non-Hermiticity and the skin effect representing the open
+                                                     bosonic BdG system is given by the eigenspectrum of a               quantum nature.
+                                                     non-Hermitian matrix constructed from the bosonic BdG                  This paper is organized as follows. In Sect. II, we define
+                                                     Hamiltonian, in the presence of anomalous terms vio-                the frequency-dependent dissipative BdG Hamiltonian in
+                                                     lating the particle number conservation [1–4]. In this              terms of the Green’s function in Nambu space. We find
+                                                     sense, the bosonic BdG Hamiltonian has been interested              that the correct particle-hole symmetry is given by a
+                                                     in terms of non-Hermitian physics [8–13], even when the             conjugate-type symmetry in this formalism. In Sect. III,
+                                                     system is essentially Hermitian. In other words, there              we propose a dynamical instability that occurs under the
+                                                     can coexist two types of non-Hermiticity in bosonic sys-            PBC and does not occur under the OBC, without the
+                                                     tems: one from the bosonic BdG nature and the other                 help of the band touching between the particle and hole
+                                                     from the open quantum nature.                                       bands. We construct a dissipative BdG Hamiltonian that
+                                                        In this paper, we consider dissipative bosonic systems           shows the boundary-dependent dynamical instability and
+                                                     under the non-Hermitian skin effect [14], which is the ex-          analyze the complex Bogoliubov spectrum. We also dis-
+                                                     treme sensitivity of the non-Hermitian spectrum to the              cuss the dynamical instabilities induced by infinitesimal
+                                                     boundary condition. For this sake, we define the dissipa-           perturbations. In Sect. IV, we point out some subtle
+                                                     tive BdG Hamiltonian in terms of the Green’s function               points about the Landau instability in terms of the den-
+                                                     [15] and determine the symmetry of it. While one can                sity of states.
+                                                     define two equivalent particle-hole symmetries in general
+                                                     non-dissipative BdG Hamiltonians, we find that the natu-
+                                                     ral extension to the Green’s function corresponds to only                              II.   FORMALISM
+                                                     one of them. By noticing this symmetry, we construct
+                                                     a dissipative bosonic model in which the normal part                  In this section, we define the dissipative Bogoliubov-
+                                                     is given by the dissipative system of the non-Hermitian             de Gennes Hamiltonian. We first review the free bosonic
+                                                                                                                         case and discuss two types of non-Hermitian particle-hole
+                                                                                                                         symmetry: the conjugate-type and the transpose-type
+                                                                                                                         symmetries, which are identical in the absence of dissi-
+                                                     ∗ okuma@hosi.phys.s.u-tokyo.ac.jp
+                                                                                                                         pation. We then define the frequency-dependent BdG
+                                                                                                                              2
+
+                                                                                                                (0)
+Hamiltonian in terms of the Green’s function in Nambu            Actually, the eigenvalue problem of HσBdG is directly
+space and discuss the complex energy spectrum. In this           related to the bosonic excitation spectrum:
+formalism, the correct particle-hole symmetry is given by                                               
+the conjugate-type symmetry.                                                         (0)        1 Λ 0
+                                                                               P −1 HσBdG P =              ,       (7)
+                                                                                                2 0 −Λ
+
+  A.   Bosonic Bogoliubov-de Gennes Hamiltonian
+                                                                 where Λ is a diagonal matrix whose elements give the
+                without dissipation                              one-particle energy spectrum of Eq. (1). In particular,
+                                                                 P can be taken as a paraunitary matrix if the spectrum
+                                                                     (0)
+  Before introducing the self-energy, we consider free           of HσBdG is real [19]:
+bosonic Hamiltonians, i.e., quadratic Hamiltonians of                                   P σz P † = σz .                      (8)
+bosonic annihilation/creation operators (ai , a†i ) with i be-
+ing the quantum degrees of freedom such as the site in-                                                               (0)
+                                                                 In this case, the particle (hole) eigenstates of HσBdG are
+dex and the orbital. In many applications, anomalous             also eigenstates of σz with an eigenvalue +1 (−1) [19].
+terms that violate the particle number conservation can          Using the paraunitary condition, the bosonic Bogoliubov
+exist. In such a case, the corresponding free Hamilto-           transformation is written in terms of the bosonic BdG
+nian is called the bosonic Bogoliubov-de Gennes (BdG)            Hamiltonian:
+Hamiltonian and written in terms of the Nambu spinor                                                    
+Φ = (a, a† ):                                                                       † (0)        1 Λ 0
+                                                                                  P HBdG P =               .            (9)
+                                                                                               2 0 Λ
+                    (0)             (0)     a
+         Ĥ = Φ† HBdG Φ = (a† , a)HBdG             .       (1)   Note that the presence of the anomalous terms changes
+                                           a†
+                                                                 the Fock vacuum of the eigenvectors from that of ai ’s.
+In general, the bosonic BdG Hamiltonian matrix has the           This change of the vacuum is called quantum correction.
+following form:                                                     In most applications to solid-state physics, the (semi)
+                                                                                            (0)
+               (0)
+                     
+                        h s
+                             
+                                  h s
+                                                                positive-definiteness of HBdG is further assumed, which
+             HBdG = † T = ∗ ∗ ,                    (2)           ensures nonnegative excitation energies. The instabil-
+                       s h        s h
+                                                                 ity that comes from the presence of negative excitation
+where h and s are Hermitian and symmetric matrices,              energy is called the Landau instability [4]. In isolated
+                                                      (0)        quantum systems, on the other hand, Landau instability
+respectively. We have assumed the Hermiticity of HBdG .
+Owing to this constraint, one can define the bosonic anal-       is suppressed, and this assumption is not always imposed.
+ogy of particle-hole symmetry [16]:                              Such a situation is thought to be realized in cold atom
+                                                                 systems. In the absence of the positive definiteness of
+                        (0)              (0)
+                  σx [HBdG ]∗ σx = HBdG ,                 (3)       (0)
+                                                                 HBdG , the excitation energy can be negative or complex.
+                                                                 Owing to the pseudo-Hermiticity, the presence of a com-
+where σ denotes the Pauli matrices in Nambu space                plex energy is equivalent to the presence of an energy
+henceforth.                                                      with positive imaginary part. Such an excitation mode
+  Unlike a conventional quadratic Hamiltonian, one-              grows in time and leads to the instability of the vacuum.
+particle energy spectrum of Eq. (1) is not given by              This type of the instability is called dynamical instability
+                                                (0)
+the eigenvalues of the matrix representation HBdG in             [4].
+the presence of the anomalous terms. This is because                Note that the following particle-hole symmetry is also
+                                       (0)
+the unitary matrix that diagonalizes HBdG can ruin the           valid in the presence of the pseudo-Hermiticity [19]:
+bosonic commutation. In general, one-particle energy
+                                                                                      (0)                 (0)
+spectrum is given by the bosonic Bogoliubov transfor-                           σy [HσBdG ]T σy = −HσBdG .                  (10)
+mation [3, 4, 17, 18]. We here introduce the mapping to
+the fermionic non-Hermitian Hamiltonin:                          In the absence of the pseudo-Hermiticity that comes from
+                                                                 the Hermiticity of Ĥ, however, the symmetries (5) and
+                       (0)          (0)
+                    HσBdG = σz HBdG .                     (4)    (10) are not identical. The correct particle-hole symme-
+                                                                 try may depend on the situation. As we will discuss later,
+Corresponding to the bosonic particle-hole symmetry              a natural extension of Eq. (5) is the correct particle-hole
+(3), this non-Hermitian Hamiltonian has the fermionic            symmetry for the effective Hamiltonian defined in terms
+particle-hole symmetry [16]:                                     of the Green’s function.
+                      (0)                 (0)
+                σx [HσBdG ]∗ σx = −HσBdG .                (5)
+                                   (0)                                  B.   Bosonic Green’s function in Nambu
+In addition, the Hermiticity of HBdG leads to the pseudo-                            representation
+                  (0)
+Hermiticity of HσBdG [16]:
+                       (0)               (0)                       There are several ways to treat open quantum systems.
+                 σz [HσBdG ]† σz = HσBdG .                (6)    A typical mathematical tool is the Lindblad equation [20,
+                                                                                                                                                     3
+
+21]. For example, a bosonic quadratic Lindblad equation                      C.     Dissipative Bogoliubov-de Gennes Hamiltonian
+has been studied in terms of topology and skin effect                                      defined for Green’s function
+[22]. Another useful mathematical tool is the Green’s
+function [15, 23]. Several studies have focused on the                        For a free bosonic system, the Green’s function in
+relation between the non-Hermitian skin effect and the                       Nambu space is defined via
+Green’s functions [24–26].
+                                                                                                                         (0)
+   In the following, we consider the retarded/advanced                                             G−1
+                                                                                                    0 = ωσz − HBdG .                               (17)
+Green’s function for bosonic excitations to include the
+dissipation/interaction/disorder effects. In the presence                    In the presence of the self-energy part ΣR (ω), the re-
+of the anomalous term known as anomalous Green0 s                            tarded Green’s function is given by
+f unction, it is convenient to introduce the Nambu repre-
+sentation, as in the case of the previous subsection. The                                            1                                 1
+                                                                                  GR (ω) =               =
+retarded Green’s function in Nambu representation is de-                                      G−1   R
+                                                                                               0 − Σ (ω)
+                                                                                                                   (0)
+                                                                                                           ωσz − [HBdG + ΣR (ω)]
+fined in terms of the Heisenberg operators [15]:                                                         1
+         0             0            † 0                                                  =:                          .                             (18)
+GR
+ ij (t, t ) = −iθ(t − t )h[Φi (t), Φj (t )]i                                                  ωσz − HBdG (ω)
+                                                                                                             (eff)
+                                                                        !
+                          0 h[ai (t), a†j (t0 )]i h[ai (t), aj (t0 )]i       Here we have defined the dissipative BdG Hamiltonian
+           = −iθ(t − t )
+                            h[a†i (t), a†j (t0 )]i h[a†i (t), aj (t0 )]i       (eff)
+                                                                             HBdG (ω), which is a frequency-dependent non-Hermitian
+               Aij (t, t0 ) Bij
+               R             R
+                                (t, t0 )
+                                                                            matrix. From the symmetry of the retarded Green’s func-
+           =:                               ,                        (11)    tion (16), one can still define the bosonic particle-Hole
+                R
+               Cij (t, t0 ) Dij
+                              R
+                                (t, t0 )                                                     (eff)
+                                                                             symmetry for HBdG (ω):
+where h·i denotes the statistical average. The following
+discussion does not depend on the choice of the statistical                                        (eff)                   (eff)
+                                                                                              σx [HBdG (−ω)]∗ σx = HBdG (ω).                       (19)
+average, and one can choose both equilibrium [15] and
+non-equilibrium statics [23, 27]. Similarly, the advanced
+Green’s function is defined as                                                        D. Eigenvalue problem of dissipative
+          0        0               † 0                                                 Bogoliubov-de Gennes Hamiltonian
+ GA
+  ij (t, t ) = iθ(t − t)h[Φi (t), Φj (t )]i
+                                                                        !
+                    0       h[ai (t), a†j (t0 )]i h[ai (t), aj (t0 )]i          The complex energy spectrum of the quasi-particles
+            = iθ(t − t)
+                            h[a†i (t), a†j (t0 )]i h[a†i (t), aj (t0 )]i     is defined by the set of poles of the retarded Green’s
+                Aij (t, t0 ) Bij
+                A              A
+                                   (t, t0 )
+                                                                            function [28] up to the factor 2:
+            =:                                .                       (12)
+                  A
+                Cij (t, t0 ) Dij A
+                                   (t, t0 )                                                                                                (eff)
+                                                                                   0 = det[GR (z)−1 ] = det[σz ] det[z − σz HBdG (z)]
+  In the following, we derive relationships between the                                                                        (eff)
+matrices AR/A , B R/A , C R/A , and DR/A . By definition,                                                    = − det[z − HσBdG (z)],               (20)
+the following relationships hold:
+                                                                             where GR (z) is the analytic continuation of GR (ω).
+    R
+   Dij (t, t0 ) = iθ(t − t0 )h[aj (t0 ), a†i (t)]i = AA     0
+                                                       ji (t , t),           We have defined the fermionic counterpart HσBdG =
+                                                                                                                               (eff)
+
+                                                                                  (eff)
+    A
+   Dij (t, t0 ) = −iθ(t0 − t)h[aj (t0 ), a†i (t)]i = AR        0
+                                                          ji (t , t),        σz HBdG . As in the case of the free bosons, the eigenval-
+                                                                             ues are calculated in terms of the fermionic BdG Hamilto-
+    R
+   Bij (t, t0 ) = iθ(t − t0 )h[aj (t0 ), ai (t)]i = BjiA 0
+                                                          (t , t),
+                                                                             nian. Note that there is no longer pseudo-Hermiticity in
+    R
+   Cij (t, t0 ) = iθ(t − t0 )h[a†j (t0 ), a†i (t)]i = Cji
+                                                       A 0
+                                                          (t , t). (13)      the fermionic counterpart owing to the non-Hermiticity of
+                                                                               (eff)
+In the steady state, the Green’s functions have the time                     HBdG (ω). This implies that the equivalence between the
+translation invariance, and these relations are written in                   conjugate-type symmetry and the transpose-type sym-
+the Fourier form:                                                            metry does not hold for the fermionic BdG Hamiltonian.
+                                                                             In the present formalism, the proper particle-hole sym-
+     DR (ω) = [AA (−ω)]T , DA (ω) = [AR (−ω)]T ,                             metry of the fermionic BdG Hamiltonian is given by the
+     B R (ω) = [B A (−ω)]T , C R (ω) = [C A (−ω)]T .                (14)     following conjugate-type symmetry:
+
+By combining these equations with [GR (ω)]† = GA (ω),                                            (eff)
+                                                                                         σx [HσBdG (−ω)]∗ σx = −HσBdG (ω).
+                                                                                                                               (eff)
+                                                                                                                                                   (21)
+we obtain
+                
+                    AR/A (ω)      B R/A (ω)
+                                                                            In the absence of the frequency dependence of the self-
+     R/A
+    G     (ω) =                                . (15)                        energy, this symmetry is reduced to the symmetry (5).
+                  [B R/A (−ω)]∗ [AR/A (−ω)]∗
+                                                                             Note that we can also define the dissipative fermionic
+From this expression, one can find the following symme-                                          (eff)
+                                                                             BdG Hamiltonian HfBdG for the fermionic Green’s func-
+try for the retarded/advanced Green’s function:                                                         (eff)
+                                                                             tion via GR (ω) = [ω − HfBdG ]−1 , which describes su-
+                σx [GR/A (−ω)]∗ σx = GR/A (ω).                      (16)     perconductors. The same symmetry (21) holds for that
+                                                                                                                         4
+
+case. The derivation is almost equal to the bosonic case       A.   Hatano-Nelson model and non-Hermitian skin
+except for the difference between commutation and anti-                             effect
+commutation relations. This symmetry was discussed in
+terms of the dissipative Majorana fermions [29].                 We here briefly review the non-Hermitian skin effect.
+   Finally, we remark the symmetry constraints for poles      Non-Hermitian skin effect is a phenomenon in which the
+of the retarded Green’s function. For an eigenvalue of        OBC spectrum of a non-Hermitian Hamiltonian is dras-
+   (eff)
+HσBdG , E(ω), one can find the particle-hole counterpart      tically different from the PBC one [14]. The simplest
+     ∗                                                        example is the Hatano-Nelson model without disorder
+−E−ω     owing to the particle-hole symmetry (21). Corre-
+spondingly, for a pole of retarded Green’s function, zp ,     [30, 31]:
+one can also find the particle-hole counterpart −zp∗ . This                  Xh                                    i
+is because the followings hold for a pair of poles:                Ĥ (HN) =      (t + g)c†i+1 ci + (t − g)c†i ci+1 , (24)
+                                                                              i
+                    z = E(z),                         (22)
+                                                              where i is the site index, (c, c† ) are creation/annihilation
+                    z = −[E(−z ∗ )]∗ ,                (23)
+                                                              operators, and t ∈ R and g ∈ R are the Hermitian sym-
+                                                              metric and non-Hermitian asymmetric hopping terms, re-
+where E(z) and −[E(−z ∗ )]∗ are the analytic continua-
+                     ∗                                        spectively. Regardless of the statistics of field operators,
+tions of E(ω) and −E−ω  , respectively. If z = zp satisfies
+                                                              the one-particle energy is simply given by the eigenvalues
+Eq. (22), then z = −zp∗ does Eq. (23), and vice versa.
+                                                              of the matrix form of the Hamiltonian:
+                                                                                                                
+                                                                                       0 t − g 0 ···
+ E.   Dynamical instability in bosonic steady state                                 t + g 0 t − g · · ·
+                                                                         H (HN) :=  0 t + g 0 · · · .                (25)
+                                                                                                                
+                                                                                        ..       ..    ..
+                                                                                                                
+  In bosonic systems with nonzero self-energy, the pres-                                                    ..
+                                                                                         .        .     .      .
+ence or absence of the dynamical instability can be pre-
+dicted by using the imaginary part of the complex en-         By using the Fourier transform, one obtain the PBC spec-
+ergy spectrum defined by Eq. (20). If there is a complex      trum parameterized by a crystal momentum k:
+energy with positive imaginary part, such an excitation
+                                                                             (HN,PBC)
+grows in time and indicates the instability of the steady                  Ek           = 2t cos k + 2ig sin k.       (26)
+state that is assumed in the quadratic analysis.
+                                                              Under the infinite-volume limit, the PBC spectrum for
+                                                              tg 6= 0 is an ellipse in the complex plane. Unlike
+             F.   Particle and hole bands
+                                                              the Hermitian tight-binding models, the OBC spectrum
+                                                              is drastically different from the PBC one. By us-
+                                                              ing a similarity transformation called imaginary gauge
+  The definitions of particle and hole bands are not obvi-    transf ormation, one can map the Hatano-Nelson model
+ous in dissipative systems. In the following, we limit our    to a Hermitian matrix:
+discussion to the poles of σz GR (z) that is adiabatically
+connected to (z − σz )−1 without closing the real energy              H (Herm) := Vr−1 H (HN) Vr
+gap. If a pole is mapped to the pole z = +1 (−1) under                                        p                
+                                                                                   p 0           t2 − g 2 · · ·
+this process, we say it is in a particle (hole) hole band.                        2        2
+                                                                               = t −g             0      · · ·,    (27)
+                                                                                        ..         ..     ..
+                                                                                         .          .         .
+ III. BOUNDARY-DEPENDENT DYNAMICAL                                                               p
+INSTABILITY UNDER NON-HERMITIAN SKIN                          where [Vr ]i,j = ri δij with r = t + g/t − g. We have
+               EFFECT                                         assumed t > g > 0 for simplicity. Since a similar-
+                                                              ity transformation preserves the spectrum of any finite-
+   In this section, we propose a dynamical instability        dimensional matrix, the OBC spectrum of H (HN) is given
+that occurs under the PBC and does not occur under            by that of H (Herm) , which is on the real axis owing to the
+the OBC, without the help of the band touching be-            Hermiticity. Remarkably, the OBC spectrum is very dif-
+tween the particle and hole bands. We first review the        ferent from the ellipse-like PBC spectrum. Note that the
+basics of the non-Hermitian skin effect. We then con-         OBC eigenstates of the Hatano-Nelson model are local-
+struct a dissipative BdG Hamiltonian that shows the           ized at one end because they are given by acting Vr on
+boundary-dependent dynamical instability, by noticing         the delocalized solutions of H (Herm) .
+the conjugate-type particle-hole symmetry of the BdG             Actually, the spectral winding number of the PBC
+Hamiltonian. We analyze the complex Bogoliubov spec-          curve indicates the emergence of the the non-Hermitian
+trum and discuss the competition between two types of         skin effect. Several observations about this correspon-
+non-Hermiticity: one from the anomalous term and the          dence were indicated in Refs. [24, 32, 33], and re-
+other from the self-energy.                                   lated theorems were proven in Refs. [34, 35]. While
+                                                                                                                                            5
+
+the Hatano-Nelson model requires asymmetric hopping
+(or momentum-dependent dissipation), on-site dissipa-
+                                                                    0.0                                  0.010
+tion can also induce the spectral winding number [36].
+For example, the combination of the spin-momentum                 - 0.2                                  0.005
+
+locked band and spin-dependent momentum-independent               - 0.4                                  0.000
+dissipation gives an effective momentum-dependence of             - 0.6                                 - 0.005
+the dissipation [37]. For applications in condensed mat-
+                                                                  - 0.8
+ter physics, such an on-site dissipation may be more                      -4    -2   0    2    4
+                                                                                                        - 0.010
+                                                                                                              -4   -2   0        2      4
+useful than the momentum-dependent dissipation. This
+construction is analogous to an implementation of a
+topological superconductor in which the p-wave paring
+is effectively realized by the combination of the spin-            0.0                                   0.010
+
+momentum-locked band structure and the s-wave paring              - 0.2                                  0.005
+[38–41].
+                                                                  - 0.4                                  0.000
+
+                                                                  - 0.6                                 - 0.005
+   B.   Boundary-dependent dynamical instability                  - 0.8
+                                                                                                        - 0.010
+          under non-Hermitian skin effect                                 -4    -2   0    2    4              -4   -2   0        2      4
+
+
+                                                              FIG. 1. Bogoliubov spectra of the dissipative Bogoliubov-
+   We here propose a dynamical instability that occurs        de Gennes Hamiltonian (29) for ∆ = 0 and 0.5. The other
+under the PBC and does not occur under the OBC. The           model parameters are the followings: t = 1, g = 0.2, and
+non-Hermitian skin effect discussed in the previous sub-      α = −2(t + 0.3) + 2ig. The PBC spectra are plotted by
+section plays a central role in this proposal. For simplic-   using the analytical expression (32), while the OBC spectra
+ity, we consider the frequency-independent self-energy        are plotted by numerical diagonalization for size L = 50.
+henceforth.
+   If anomalous terms are absent, there is no need to
+introduce the Nambu representation, and the bosonic
+Green’s function is expressed in terms of a conventional      constructed to satisfy the particle-hole symmetry (21).
+form:                                                         Note that the non-Hermiticity of the anomalous term
+                                                                                                              (eff)
+                                                              originates from the Hermitian term of the HBdG , and
+                         1            1
+         GR (ω) =              =:             .       (28)    the essential non-Hermiticity is only in the normal term.
+                    ω − H − ΣR    ω − H (eff)                 Our motivation is to discuss the competition between
+                                                              these two types of non-Hermiticity.
+In that case, however, H (eff) cannot have eigenvalues
+with positive imaginary part, which means the absence           Under the PBC, the Bloch Hamiltonian for Eq.(29) is
+of the dynamical instability. Thus, the anomalous term        given by
+is essential to observe the dynamical instability. If the        (eff)
+                                                                                      h
+                                                                                          (HN,PBC)
+                                                                                                           i
+self-energy is negligibly small, there emerges the pseudo-    HσBdG (k) = −i Im α + Ek             − Re α σz + i∆σx ,
+Hermiticity. In that case, the complex energy can be                                                                                 (30)
+found only when the particle and hole bands experience
+the band crossing at the zero energy. This means that one                  (HN,PBC)
+                                              (0)             where Ek           is given in Eq.(26). Since the non-
+should give up the positive definiteness of HBdG in order     Hermiticity in the normal part should correspond to dis-
+to observe the non-Hermitian skin effect because one can-     sipation, we assume
+not find a PBC spectral winding for the real spectrum.
+Such an assumption is relevant in specific cases such as                                      (HN,PBC)
+                                                                                max Im Ek                  = 2g ≤ Im α.              (31)
+cold atom systems. See Ref. [42–44] for the dynamical                          k∈[0,2π)
+instability in such cases.
+   For the relevance in various applications including        In the absence of the anomalous term, the BdG Hamilto-
+solid-state physics, we consider the case where the parti-    nian is reduced to the Hatano-Nelson model with a con-
+cle and hole bands do not experience the band crossing.       stant shift, and there is no dynamical instability owing
+For this sake, we use the combination of the Hatano-          to Eq. (31). In the presence of the anomalous term, on
+Nelson model (25) and the anomalous terms. Let us con-        the other hand, there is a possibility for the dynamical
+sider the following BdG Hamiltonian:                          instability. To see this, we consider the explicit form of
+                  (HN)                                      the Bogoliubov spectrum:
+         (eff)    H       −α          i∆
+      HσBdG =                                   ,     (29)
+                               −[H (HN) − α]∗
+                                                                                              rh
+                       i∆                                        (BdG)                               (HN,PBC)
+                                                                                                                            i2
+                                                                Ek,± = −i Im α ±                   Ek              − Re α        − ∆2
+where ∆ ∈ R and α ∈ C represent the anomalous term                                             p
+and a constant shift, respectively. This Hamiltonian is                        =: −i Im α ±        A(|∆|) + iB,                      (32)
+                                                                                                                       6
+
+where A, B ∈ R. The imaginary part of the square root         value in terms of the system size. In Ref. [47], the
+is expressed as                                               author and a coworker discussed an infinitesimal insta-
+        √                            1
+                                                              bility against a local perturbation of a spin-dependent
+      Im A + iB          (A2 + B 2 ) 4                        non-Hermitian skin effect in which the direction of the
+                =q        √                 .    (33)
+           B                                                  asymmetric hopping depends on the spin. The simplest
+                     (A + A2 + B 2 )2 + B 2
+                                                              model for this phenomenon is given by the stack of the
+                                                              Hatano-Nelson model:
+Since this form is a monotonically decreasing function
+of A and A(|∆|) is a monotonically decreasing function
+                                                                                    (HN)                   
+                                                                                     H     (k)       0
+of |∆|, the absolute value of the square root is a mono-               Hspin (k) =                            .  (34)
+                                                                                         0      H (HN) (−k)
+tonically increasing function of |∆|. Thus, the imagi-
+nary part of the Bogoliubov spectrum can be positive          While the OBC spectrum of this model is on the real axis,
+for sufficiently large |∆|, which leads to the dynamical      the introduction of the transverse magnetic field that
+instability. Remarkably, one can choose a parameter so        couples the different blocks of Hspin drastically changes
+that the dynamical instability does not occur under the       the OBC spectrum. In Ref. [34], the author and cowork-
+OBC because the OBC spectrum can be drastically dif-          ers used the notion of infinitesimal instability to charac-
+ferent from the PBC one under the non-Hermitian skin          terize the Z2 skin effect protected by the time-reversal
+effect. In Fig.1, we plot the PBC curve (32) and the          symmetry, which is characterized not by the spectral
+OBC curve that is obtained by a numerical diagonaliza-        winding nubmer but by the Z2 topological invariant. In
+tion for L = 50, where L is the number of sites. We           general, symmetry-protected skin effects should be un-
+have set the largest imaginary part of PBC eigenvalues        stable to symmetry-breaking perturbations.
+to be infinitesimally small value 0− in the absence of the       The notion of infinitesimal instability would be rele-
+anomalous term. Figure 1 indicates that the introduction      vant for the physics of dynamical instability. If we intro-
+of the anomalous term leads to the dynamical instabil-        duce a small perturbation that couples the edges of Eq.
+ity under the PBC without the help of the band cross-         (29), we can expect a dynamical instability against it. If
+ing, while the largest imaginary part of the OBC eigen-       we replace the normal part of Eq. (29) with the system
+values remains negative for finite ∆ owing to the non-        with a symmetry-protected skin effect, we can expect a
+Hermitian skin effect, which means the absence of the         dynamical instability due to a small symmetry-breaking
+dynamical instability. Under the PBC, the complex en-         local perturbation under the OBC. Note that a non-
+ergies with positive imaginary part are around k ∼ π/2,       dissipative Bogoliubov-de Gennes Hamiltonian treated in
+which are the chiral modes (left movers) with finite real     Ref. [44] shows an infinitesimal instability, which was
+energies. Thus, the collapse of the steady state is accom-    also discussed in terms of a dynamical instability.
+panied by a current circulating the PBC system. If we
+set the largest imaginary part of PBC eigenvalues is a
+finite negative value, there is a threshold for ∆ to induce                     IV.   DISCUSSION
+the dynamical instability. Note that too large ∆ leads
+to the band crossing at the imaginary axis. Note also            We remark several points about the band crossing be-
+that our proposal does not depend on the specific prop-       tween particle and hole bands and the Landau instabil-
+erties of the model and the situation. One can discuss the    ity. Strictly speaking, the absence of the band cross-
+boundary-dependent dynamical instability of the system        ing does not directly mean the absence of the Lan-
+with the non-Hermitian skin effect, which does not re-        dau instability. While we have assumed the frequency-
+quire the momentum-dependent dissipation as discussed         independent dissipation, it means that the density of
+in the previous subsection. In addition, one can define       states for
+the retarded Green’s function both for equilibrium and               P the particle bands calculated by Dpart (ω) =
+                                                              1/πIm i:particle (ω − Ei )−1 , where Ei ’s are eigenvalues
+non-equilibrium steady states, and the above discussion           (eff)
+may be applicable to various systems.                         of HσBdG , takes a finite value at ω < 0, which indicates
+                                                              the presence of the Landau instability. In this sense, ω-
+                                                              dependence of the dissipative BdG Hamiltonian should
+ C.   Dynamical instability related to infinitesimal          be considered for more realistic calculations. For this
+                    instability                               sake, one should treat ω-dependent equation (20) to get
+                                                              the Bogoliubov spectrum. Let z0 be a Bogoliubov eigen-
+   In terms of the mathematics of the Toeplitz matrices,      value with positive imaginary part of some frequency-
+                                                                              (eff)
+a small nonlocal perturbation that couples the different      independent HσBdG . From this Hamiltonian, we can con-
+edges of a tight-binding model drastically changes the        struct a frequency-dependent Hamiltonian with the dy-
+OBC spectrum [45, 46]. In particular, it becomes identi-      namical instability and without the Landau instability by
+                                                                                                          (eff)   (0)
+cal to the PBC curve with a spectral winding for an in-       choosing ΣR (ω) so that ΣR (z0 ) = σz (HσBdG − HσBdG )
+finitesimally small perturbation after taking the infinite-   and Dpart (ω < 0) = 0, at least mathematically. Thus,
+volume limit. In finite systems, the threshold for this       the essence of our result does not suffer from the Landau
+spectral instability is taken to be an exponentially small    instability.
+                                                                                                                              7
+
+   We also mention the relationship between the non-             the absence of complex eigenvalues with positive imagi-
+Hermitian skin effect and the Landau instability. Al-            nary part, which implies the insensitivity of the Landau
+though one might expect that the skin effect can also            instability to the boundary condition.
+induce the sensitivity of the Landau instability to the
+boundary condition, such an expectation may be incor-
+rect. If the smallest real part of the PBC curve is nega-                        ACKNOWLEDGMENTS
+tive and that of the OBC curve is positive, the Landau
+instability is induced for both cases. This is because the          I thank Masatoshi Sato for a fruitful discussion about
+relevant quantity for the Landau instability may not be          free bosonic BdG Hamiltonians. I also thank Terufumi
+the Bogoliubov complex energy but the density of states          Yamaguchi for a fruitful discussion about Green’s func-
+around zero energy. As shown in Ref. [25], the density           tions. This work was supported by JST CREST Grant
+of states is insensitive to the non-Hermitian skin effect in     No. JPMJCR19T2, Japan. N.O. was supported by JSPS
+                                                                 KAKENHI Grant No. JP20K14373.
+
+
+
+
+ [1] N. Bogoliubov, On the theory of superfluidity, J. Phys      [17] A. G. Del Maestro and M. J. Gingras, Quantum spin
+     11, 23 (1947).                                                   fluctuations in the dipolar heisenberg-like rare earth py-
+ [2] A. Altland and B. D. Simons, Condensed matter field              rochlores, Journal of Physics: Condensed Matter 16,
+     theory (Cambridge university press, 2010).                       3339 (2004).
+ [3] J. Colpa, Diagonalization of the quadratic boson hamil-     [18] R. Shindou, R. Matsumoto, S. Murakami, and J.-i. Ohe,
+     tonian, Physica A: Statistical Mechanics and its Appli-          Topological chiral magnonic edge mode in a magnonic
+     cations 93, 327 (1978).                                          crystal, Phys. Rev. B 87, 174427 (2013).
+ [4] Y. Kawaguchi and M. Ueda, Spinor bose–einstein con-         [19] K. Kawabata, and K. Shiozaki, and M. Ueda, and
+     densates, Physics Reports 520, 253 (2012).                       M. Sato, Symmetry and Topology in Non-Hermitian
+ [5] T. Ozawa, H. M. Price, A. Amo, N. Goldman, M. Hafezi,            Physics, Phys. Rev. X 9, 041015 (2019).
+     L. Lu, M. C. Rechtsman, D. Schuster, J. Simon, O. Zil-      [20] G. Lindblad, On the generators of quantum dynamical
+     berberg, et al., Topological photonics, Reviews of Modern        semigroups, Commun. Math. Phys. 48, 119 (1976).
+     Physics 91, 015006 (2019).                                  [21] T. Prosen, Third quantization: a general method to solve
+ [6] P. A. McClarty, Topological magnons: A review, Annual            master equations for quadratic open fermi systems, New
+     Review of Condensed Matter Physics 13, null (2022),              Journal of Physics 10, 043026 (2008).
+     https://doi.org/10.1146/annurev-conmatphys-031620-          [22] Flynn, Vincent P. and Cobanera, Emilio and Viola,
+     104715.                                                          Lorenza, Topology by dissipation: Majorana bosons in
+ [7] L. Zhang, J. Ren, J.-S. Wang, and B. Li, Topological             metastable quadratic markovian dynamics, Phys. Rev.
+     nature of the phonon hall effect, Phys. Rev. Lett. 105,          Lett. 127, 245701 (2021).
+     225901 (2010).                                              [23] L. V. Keldysh et al., Diagram technique for nonequilib-
+ [8] C. M. Bender and S. Boettcher, Real Spectra in Non-              rium processes, Sov. Phys. JETP 20, 1018 (1965).
+     Hermitian Hamiltonians Having PT Symmetry, Phys.            [24] D. S. Borgnia, and A. J. Kruchkov, and R.-J. Slager, Non-
+     Rev. Lett. 80, 5243 (1998).                                      Hermitian Boundary Modes and Topology, Phys. Rev.
+ [9] C. M. Bender, and D. C. Brody, and H. F. Jones, Com-             Lett. 124, 056802 (2020).
+     plex Extension of Quantum Mechanics, Phys. Rev. Lett.       [25] N. Okuma and M. Sato, Non-hermitian skin effects in
+     89, 270401 (2002).                                               hermitian correlated or disordered systems: Quantities
+[10] C. M. Bender, Making sense of non-Hermitian Hamilto-             sensitive or insensitive to boundary effects and pseudo-
+     nians, Rep. Prog. Phys. 70, 947 (2007).                          quantum-number, Phys. Rev. Lett. 126, 176601 (2021).
+[11] V. V. Konotop, and J. Yang, and D. A. Zezyulin, Non-        [26] Roccati, Federico, Non-hermitian skin effect as an impu-
+     linear waves in PT -symmetric systems, Rev. Mod. Phys.           rity problem, Phys. Rev. A 104, 022215 (2021).
+     88, 035002 (2016).                                          [27] J. Rammer, Quantum field theory of non-equilibrium
+[12] R. El-Ganainy, and K. G. Makris, and M. Khajavikhan,             states, Quantum Field Theory of Non-equilibrium States
+     and Z. H. Musslimani, and S. Rotter, and D. N.                   (2011).
+     Christodoulides, Non-Hermitian physics and PT symme-        [28] L. M. Sieberer, M. Buchhold, and S. Diehl, Keldysh field
+     try, Nat. Phys. 14, 11 (2018).                                   theory for driven open quantum systems, Reports on
+[13] Y. Ashida, Z. Gong, and M. Ueda, Non-hermitian                   Progress in Physics 79, 096001 (2016).
+     physics, Advances in Physics 69, 249 (2020).                [29] C. Beenakker, Random-matrix theory of majorana
+[14] S. Yao, and Z. Wang, Edge States and Topological Invari-         fermions and topological superconductors, Reviews of
+     ants of Non-Hermitian Systems, Phys. Rev. Lett. 121,             Modern Physics 87, 1037 (2015).
+     086803 (2018).                                              [30] N. Hatano and D. R. Nelson, Localization Transitions
+[15] A. L. Fetter and J. D. Walecka, Quantum theory of many-          in Non-Hermitian Quantum Mechanics, Phys. Rev. Lett.
+     particle systems (Courier Corporation, 2012).                    77, 570 (1996).
+[16] S. Lieu, Topological symmetry classes for non-hermitian     [31] N. Hatano and D. R. Nelson, Vortex pinning and non-
+     models and connections to the bosonic bogoliubov–de              Hermitian quantum mechanics, Phys. Rev. B 56, 8651
+     gennes equation, Phys. Rev. B 98, 115135 (2018).                 (1997).
+                                                                                                                            8
+
+[32] Z. Gong, and Y. Ashida, and K. Kawabata, and K.              [40] R. M. Lutchyn, J. D. Sau, and S. Das Sarma, Ma-
+     Takasan, and S. Higashikawa, and M. Ueda, Topologi-               jorana fermions and a topological phase transition in
+     cal Phases of Non-Hermitian Systems, Phys. Rev. X 8,              semiconductor-superconductor heterostructures, Phys.
+     031079 (2018).                                                    Rev. Lett. 105, 077001 (2010).
+[33] C. H. Lee, and R. Thomale, Anatomy of skin modes and         [41] Y. Oreg, G. Refael, and F. von Oppen, Helical liquids
+     topology in non-Hermitian systems, Phys. Rev. B 99,               and majorana bound states in quantum wires, Phys. Rev.
+     201103(R) (2019).                                                 Lett. 105, 177002 (2010).
+[34] N. Okuma, and K. Kawabata, and K. Shiozaki, and M.           [42] A. McDonald, T. Pereg-Barnea, and A. A. Clerk, Phase-
+     Sato, Topological Origin of Non-Hermitian Skin Effects,           dependent chiral transport and effective non-hermitian
+     Phys. Rev. Lett. 124, 086801 (2020).                              dynamics in a bosonic kitaev-majorana chain, Phys. Rev.
+[35] K. Zhang, Z. Yang, and C. Fang, Correspondence be-                X 8, 041031 (2018).
+     tween winding numbers and skin modes in non-hermitian        [43] Flynn, Vincent P and Cobanera, Emilio and Viola,
+     systems, Phys. Rev. Lett. 125, 126402 (2020).                     Lorenza, Deconstructing effective non-hermitian dynam-
+[36] Y. Yi and Z. Yang, Non-hermitian skin modes induced               ics in quadratic bosonic hamiltonians, New Journal of
+     by on-site dissipations and chiral tunneling effect, Phys.        Physics 22, 083004 (2020).
+     Rev. Lett. 125, 186802 (2020).                               [44] K. Yokomizo and S. Murakami, Non-bloch band theory
+[37] N. Okuma and M. Sato, Quantum anomaly, non-                       in bosonic bogoliubov–de gennes systems, Phys. Rev. B
+     hermitian skin effects, and entanglement entropy in open          103, 165123 (2021).
+     systems, Phys. Rev. B 103, 085428 (2021).                    [45] L. N. Trefethen, and M. Embree, Spectra and Pseudospec-
+[38] M. Sato and Y. Ando, Topological superconductors: a re-           tra (Princeton University Press, Princeton, NJ, 2005).
+     view, Reports on Progress in Physics 80, 076501 (2017).      [46] N. Okuma and M. Sato, Hermitian zero modes protected
+[39] M. Sato, Y. Takahashi, and S. Fujimoto, Non-abelian               by nonnormality: Application of pseudospectra, Phys.
+     topological order in s-wave superfluids of ultracold              Rev. B 102, 014203 (2020).
+     fermionic atoms, Phys. Rev. Lett. 103, 020401 (2009).        [47] N. Okuma, and M. Sato, Topological Phase Transition
+                                                                       Driven by Infinitesimal Instability: Majorana Fermions
+                                                                       in Non-Hermitian Spintronics, Phys. Rev. Lett. 123,
+                                                                       097701 (2019).
+

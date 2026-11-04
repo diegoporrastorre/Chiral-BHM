@@ -1,0 +1,13 @@
+scan up 36.99
+scan up 38.99
+scan up 40.99
+scan up 42.99
+scan up 44.99
+scan down 43.02
+scan down 41.02
+scan down 39.019999999999996
+scan down 37.019999999999996
+scan down 35.019999999999996
+low target growth -0.13121353078593198 vacuum reached True refined True continuation end 0.5269851715302165
+middle target growth -0.05712666509033572 vacuum reached False refined False continuation end 0.34746729700768747
+high target growth -0.49999999999999656 vacuum reached True refined True continuation end 0
