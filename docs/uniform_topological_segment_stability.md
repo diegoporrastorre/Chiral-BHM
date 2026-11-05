@@ -1034,3 +1034,785 @@ The uncompensated state has frozen winding zero at sites 1–49. Only the last s
 We have not excluded other uncompensated stationary branches and cannot assert that this parameter point admits only trivial solutions without compensation. Also, epsilon=38.51 is not an example of trivial uncompensated bulk: its uncompensated attractor already has an extended nonzero frozen-winding segment. The epsilon=32 example makes the narrower, directly tested preparation comparison explicit.
 
 Source: `data/generated/compensation_n50/preparation_30_35/epsilon_32.000000.json`. Reproduce the comparison and 16384-point winding checks with `python src/compensation_trivial_bulk_example.py`; the underlying evolution protocol and tolerances are documented in the preparation scan above.
+
+## Is the homogeneous intermediate solution always topological? General detuning and loss
+
+Calculated 2026-11-05. **No, not for arbitrary detuning and loss.** For the
+onsite-only model there is an exact condition explaining the original
+map and explicit gapped, topologically trivial intermediate solutions
+outside that regime. The statement here concerns the zero-frequency
+point-gap winding; OBC dynamical stability is a separate question.
+
+### Conventions and intermediate branch
+
+Keep J>0, U<0, V=0, kappa>0 and 0<phi<pi. Retain the onsite U n^2
+convention and forward hopping J exp(+i phi), Fourier exp(ikj), and
+time evolution exp(-i omega t). Define
+
+$$
+a=\Delta+U,\qquad \gamma=\kappa/2,\qquad
+h=2J\cos\phi,\qquad c=a+h,\qquad t=-2Un>0.
+$$
+
+Here t is an interaction-induced frequency, not time. The homogeneous
+stationary input-output curve is
+
+$$
+\epsilon^2=F(n)=n[(c+2Un)^2+\gamma^2]
+=n[(c-t)^2+\gamma^2].
+$$
+
+A distinct positive intermediate root exists precisely between the two
+fold drives when c>sqrt(3) gamma. It is parametrized by
+
+$$
+t_-<t<t_+,\qquad
+t_\pm=\frac{2c\pm\sqrt{c^2-3\gamma^2}}{3}.
+$$
+
+F'(n)<0 on this branch. Its pairing magnitude is g=t and its effective
+BdG detuning is d=a-2t. Fixed root-specific endpoint pumps can make it
+exactly homogeneous under OBC; they do not alter these bulk coefficients.
+
+### Exact topological criterion for each state
+
+Use Q(k)=-H(k) at omega_ref=0 and the extended chiral Hamiltonian
+[[0,Q],[Q^dagger,0]]. Its invariant is
+
+$$
+\nu(0)=\frac{1}{2\pi i}\int_{-\pi}^{\pi}dk\,
+\partial_k\log\det Q(k),
+$$
+$$
+D(k)=\det Q(k)=[2J\sin\phi\sin k-i\gamma]^2
+-[d+2J\cos\phi\cos k]^2+t^2.
+$$
+
+For the stated phase interval, Im D(k)=-4 gamma J sin(phi) sin(k)
+is negative on (0,pi) and positive on (-pi,0). The only real-axis
+crossings are therefore at 0 and pi. Set
+
+$$
+X_0=t^2-\gamma^2-(a+h-2t)^2=-F'(n)>0,
+\qquad
+X_\pi=t^2-\gamma^2-(a-h-2t)^2.
+$$
+
+The intermediate condition fixes X_0, but does not fix X_pi. Consequently
+
+$$
+\boxed{\nu(0)=\begin{cases}
+-1,&X_\pi<0,\\
+0,&X_\pi>0.
+\end{cases}}
+$$
+
+At X_pi=0 the point gap closes at k=pi, so the invariant is undefined.
+Both strict inequalities give an open bulk singular point gap. Reversing
+the chain orientation reverses the nonzero winding sign.
+
+An equivalent explicit description of the trivial states uses b=a-h:
+
+$$
+X_\pi=-3t^2+4bt-b^2-\gamma^2.
+$$
+
+Thus X_pi>0 requires b>sqrt(3) gamma and
+
+$$
+\frac{2b-\sqrt{b^2-3\gamma^2}}3<t<
+\frac{2b+\sqrt{b^2-3\gamma^2}}3.
+$$
+
+Intersect this interval with (t_-,t_+) to obtain all trivial intermediate
+states at fixed detuning, loss and phase. This is a necessary and sufficient
+criterion, rather than a numerical extrapolation.
+
+### When is every intermediate state topological across all phases?
+
+![Determinant trajectories and real-axis crossings for topological, gapless, and trivial intermediate states](../figures/intermediate_real_axis_crossings.png)
+
+The figure follows **one intermediate branch** at J=kappa=1,
+U=-0.0002, V=0, Delta=3.0002 and phi=pi/3, varying only the drive.
+Blue follows increasing k from -pi to 0; orange follows 0 to pi.
+Arrows indicate the traversal direction. The black circle marks X_0,
+the purple square X_pi, and the pink cross marks the origin.
+
+- Left: epsilon=134.36889521, n=5750 gives X_0=4.68 and X_pi=-1.72.
+  The trajectory winds clockwise once around the origin: nu=-1.
+- Center: epsilon=147.79717897, n=4835.64636478 gives X_0=3.47406837
+  and X_pi=0. The trajectory passes through the origin at k=pi:
+  the point gap closes and the invariant is undefined.
+- Right: epsilon=155.04837955, n=4000 gives X_0=1.67 and X_pi=0.87.
+  Both crossings are positive and the trajectory does not encircle
+  the origin: nu=0.
+
+All three densities are checked to be the middle of three positive
+stationary roots. The transition is obtained analytically from
+t=(8+sqrt(13))/6, using t=-2Un. The two gapped winding values are
+independently checked with 16384 momenta. These panels illustrate bulk
+topology, not finite-OBC stability. Reproduce with
+`python src/plot_real_axis_crossings.py`; PNG and vector SVG versions
+are in `figures/`, with numerical records in
+`data/generated/intermediate_topology_general/real_axis_crossings.json`.
+
+### All-phase guarantee
+
+If a<=sqrt(3) gamma, existence c>sqrt(3) gamma implies h>0. For b=a-h<=0,
+X_pi is strictly negative for t>0. For b>0, completing the square gives
+
+$$
+X_\pi=-3(t-2b/3)^2+b^2/3-\gamma^2<0,
+$$
+
+because b<a<=sqrt(3) gamma. Therefore every existing distinct intermediate
+state with 0<phi<pi is topological in this regime.
+
+Conversely, if a>sqrt(3) gamma, choose phi=pi/2. Then h=0, intermediate
+states exist, and X_pi=X_0>0 for every one of them. They are gapped and
+have nu(0)=0. Continuity also gives trivial intermediate states in an open
+neighborhood of pi/2, so this is not solely a fine-tuned counterexample.
+
+Combining existence and topology, the nonvacuous all-phase guarantee is
+
+$$
+\boxed{\sqrt3\,\kappa/2-2J<\Delta+U\leq\sqrt3\,\kappa/2.}
+$$
+
+Below or at the lower bound there is no distinct intermediate branch at
+any phase. Above the upper bound, some intermediate states are trivial.
+This classification assumes U<0 and V=0; it is not asserted for the
+cross-Kerr model. No lower/upper density branches are classified here.
+
+For the original Delta=0.5, U=-0.0002, kappa=1, a=0.4998<0.8660254,
+so the original map falls in the guaranteed-topological regime. At that
+fixed detuning, the guarantee holds for kappa>=0.5771193291, provided
+kappa<2.8865204058 so the intermediate branch still exists somewhere.
+For smaller positive losses, trivial intermediate states become possible.
+
+The derivation excludes phi=0,pi, where the imaginary part of D vanishes
+identically and gap closure must be checked separately. In the original
+map phi=0 is gapless. Root-merger boundaries have X_0=0 and are gapless
+at k=0 for all these parameters.
+
+At phi=pi/2 the stronger statement holds: H(k)=2J sin(k) I plus a
+constant Nambu matrix, so the determinant path retraces itself. All
+point-gap windings are zero at every reference with an open point gap,
+not just at omega_ref=0. The generic criterion above remains specific to
+zero reference frequency.
+
+### Numerical check across detuning and loss
+
+Set J=1 and U=-0.0002. Scan bare detunings {-1,0,0.5,1,2,3,4}, losses
+{0.1,0.3,1,2,4,6}, 45 phases from 2 to 178 degrees, and 21 density
+fractions from 0.01 to 0.99 between the turning points. Only parameter
+sets admitting a distinct intermediate root contribute. The phase grid
+includes 90 degrees, with each phase sampled once.
+
+There are 17,367 evaluated backgrounds: 14,155 with nu=-1 and 3,212
+with nu=0. Counts describe this sampling, not phase-space areas. Direct
+determinant phase sums with 2048 and 4096 momentum points agree with the
+analytical criterion at every background, with zero mismatches. Maximum
+phase increments are 2.71172 and 2.36356 radians, below pi; maximum
+deviation from integer winding is below 9e-16. The analytic crossing
+argument, rather than sampling alone, establishes the open point gap.
+
+Three examples additionally use full 2-by-2 Bloch singular values and
+winding sums on 8192 and 16384 momenta, plus direct substitution into
+the complex compensated N=20 mean-field equations:
+
+| Delta | kappa | phi | epsilon | Intermediate density | X_0 | X_pi | nu(0) | Sampled minimum singular gap / J |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 3.0002 | 1 | pi/3 | 156.12494996 | 3750 | 1 | 1 | 0 | 0.38196601 |
+| 0.5 | 0.1 | pi/2 | 5.02024715 | 833 | 0.08076668 | 0.08076668 | 0 | 0.15925875 |
+| 0.5 | 1 | pi/3 | 38.51 | 1990.52082476 | 0.37536986 | -3.99509678 | -1 | 0.28770283 |
+
+In the first counterexample, the three stationary densities are
+3086.08890731, 3750, and 13163.91109269. This explicitly verifies that
+the trivial state is the middle root. Its d=0, g=1.5 and gamma=0.5 give
+X_0=X_pi=1, far from a point-gap closing. All three examples have
+compensated stationary-force residuals below 1.5e-14 J, and both refined
+momentum grids return the same winding and quoted singular gaps.
+
+These checks do not claim OBC stability of the counterexamples. In fact,
+the intermediate condition X_0>0 implies a growing k=0 Bloch mode:
+sqrt(t^2-(d+h)^2)>gamma. Every such homogeneous intermediate state is
+PBC unstable (k=0 is allowed), while its finite-OBC stability must still
+be calculated. The possibility of OBC stabilization and the zero-frequency
+winding are not interchangeable statements.
+
+### Reproduction and scope
+
+Run `python src/intermediate_topology_general.py` in the project's numerical
+environment. Saved results are
+`data/generated/intermediate_topology_general/results.json` and `scan.npz`,
+including all parameters, densities, drives, determinant signs, winding
+checks and example stationary residuals. No random sampling, time evolution,
+new OBC stability sweep or covariance feedback is used. The earlier
+fixed-parameter topology map remains correct; this section limits its
+generalization to other detunings and losses.
+
+## Can compensation stabilize a topologically trivial intermediate state?
+
+For the homogeneous **V=0 model with uniform loss and fixed endpoint-drive
+compensation**, the answer is **no**, at any finite chain length, when
+0<phi<pi and the zero-frequency point gap is open. This is stronger than
+the preceding numerical search: the trivial intermediate sector has
+exactly N growing OBC generator eigenvalues. It does not assert that every
+topological intermediate state is stable.
+
+### Analytical obstruction
+
+Retain the notation above: g=t=-2Un>0, d=Delta+U-2t, gamma=kappa/2.
+The intermediate condition gives X_0>0. A trivial gapped state also has
+X_pi>0, so
+
+$$
+g^2-\gamma^2>
+\max\{(d+2J\cos\phi)^2,(d-2J\cos\phi)^2\}
+=(|d|+2J|\cos\phi|)^2.
+$$
+
+After a constant Nambu-coordinate rotation and a global phase rotation
+of the uniform pairing, the OBC time generator is similar to
+
+$$
+G=\begin{pmatrix}
+K+(g-\gamma)I&D\\-D&K-(g+\gamma)I
+\end{pmatrix},
+$$
+
+where K is real skew-symmetric and
+D=dI+J cos(phi)(S+S^T) is real symmetric, with S the open shift.
+The drift K=J sin(phi)(S^T-S) fixes our orientation. Consequently
+
+$$
+\|D\|_2\leq |d|+2J|\cos\phi|<\sqrt{g^2-\gamma^2},
+\qquad g>\gamma.
+$$
+
+Consider the spectral homotopy replacing D by sD, 0<=s<=1. At s=0,
+N eigenvalues have real part g-gamma>0 and N have real part
+-g-gamma<0, since K has purely imaginary eigenvalues.
+
+No eigenvalue can cross the imaginary axis during this homotopy. Indeed,
+an eigenvalue lambda=i eta with eigenvector (x,y) would obey
+
+$$
+[(\gamma-g+i\eta)I-K]x=sDy,\qquad
+[(\gamma+g+i\eta)I-K]y=-sDx.
+$$
+
+Since K is skew-Hermitian, the smallest singular values of the two
+left-hand operators are at least g-gamma and g+gamma. Thus
+
+$$
+(g-\gamma)\|x\|\leq s\|D\|\|y\|,\qquad
+(g+\gamma)\|y\|\leq s\|D\|\|x\|.
+$$
+
+Both components must be nonzero. Multiplication would require
+g^2-gamma^2<=s^2||D||^2, contradicting the strict norm bound.
+Continuity of the finite-dimensional spectrum therefore preserves the
+N right-half-plane roots up to s=1. These are N modes with Im(omega)>0.
+
+Fixed additive endpoint compensation restores the stationary force but
+has no fluctuation derivative; it cannot remove this obstruction. The
+proof concerns the actual hard-OBC uniform-background operator, not an
+assumption that OBC and PBC spectra coincide.
+
+Therefore, for the stated model and an open point gap,
+
+$$
+\boxed{\text{OBC-stable homogeneous intermediate state}
+\ \Longrightarrow\ \nu(0)=-1.}
+$$
+
+This does not extend automatically to V nonzero, nonuniform losses,
+inhomogeneous backgrounds, auxiliary reservoirs, active feedback, or
+different endpoint fluctuation terms. The gapless phi endpoints and
+branch-merger points are outside the strict statement.
+
+### Why this is a matrix proof, not a convective-instability argument
+
+The implication "stable intermediate implies topological" does not mean
+that topology causes stability. It follows by excluding the alternative:
+an intermediate root has X_0>0; if it is also trivial and gapped, it has
+X_pi>0. Together these signs imply the strong pairing inequality
+g^2-gamma^2>||D||_2^2, which forces finite-OBC instability by the matrix
+argument above. Taking the contrapositive yields the stated implication.
+Topological intermediate states can still be unstable, so nonzero winding
+is a necessary condition here, not a sufficient stability criterion.
+
+The finite-matrix reasoning can be summarized in three steps:
+
+1. In the generator G, temporarily set the block D to zero. The
+   skew-Hermitian drift K changes oscillation frequencies but not the
+   real parts of the eigenvalues. There are N growing modes with rate
+   g-gamma and N decaying modes with rate -g-gamma.
+2. Restore D continuously through sD, with 0<=s<=1. The norm inequality
+   prevents any eigenvalue from reaching the imaginary axis, as shown
+   by the two singular-value bounds above.
+3. The number of growing modes therefore remains N in the actual OBC
+   chain. This is a statement about its full finite-dimensional spectrum.
+
+The interpolation sD is a mathematical device to count unstable modes.
+It is not a physical compensation ramp, a continuation of stationary
+mean-field solutions, or a time-dependent preparation protocol. The
+auxiliary matrices along the interpolation need not correspond to the
+same nonlinear stationary branch. Only the final matrix is the physical
+operator whose instability is being proved.
+
+The convective/absolute analysis asks a different question. It starts
+from the infinite homogeneous chain's response to a localized perturbation,
+
+$$
+\mathcal G_r(t)=\int_{-\pi}^{\pi}\frac{dk}{2\pi}
+e^{ikr}e^{-i\mathcal H(k)t},
+$$
+
+and examines its growth at fixed position or along a moving ray r=vt.
+A perturbation can grow while travelling and decay at a fixed site;
+this is convective instability. Complex saddles and their contour
+accessibility determine these bulk response rates when the saddle
+description applies; singular limits may require additional contributions.
+
+That bulk response calculation does not generally decide finite-OBC
+stability, because a finite chain also contains boundary scattering,
+channel conversion and possible feedback. The distinction and examples
+of disagreement are discussed in
+`../derivations/bdg_saddle_stability_step_by_step.md` and
+`../derivations/quantum2023_detuned_stability.md`.
+
+The present proof uses no complex saddle, no assumption about absorbing
+boundaries and no thermodynamic limit. It directly excludes a stable
+trivial intermediate state at every finite N under the stated V=0,
+uniform-loss, homogeneous-background and fixed-drive-compensation
+assumptions. It does not establish whether a particular stable
+topological state has convective amplification; that remains a separate
+bulk-response calculation.
+
+### Search and joint phase diagram
+
+The 3,212 trivial intermediate backgrounds of the preceding detuning/loss
+scan were independently tested with N=50 OBC spectra. None is stable;
+the smallest computed maximum growth is +0.0032839363 J. This search
+motivated the analytical obstruction, rather than proving a universal
+absence by finite sampling.
+
+![Joint OBC stability and zero-frequency topology for compensated intermediate states at Delta=3.0002](../figures/compensated_stability_topology_detuning3.png)
+
+The diagram holds N=50, J=kappa=1, U=-0.0002, V=0 and Delta=3.0002
+fixed, and changes phi and epsilon. It uses 160 phase rows strictly
+inside (0,pi) and 64 intermediate-density fractions clustered near both
+turning points (10,240 backgrounds). The density parameterization is
+mapped into epsilon with the stationary cubic. Each target uses its own
+fixed complex endpoint compensation. Grey means no distinct intermediate
+root. Green denotes stable topological states; orange unstable
+topological states; blue unstable trivial states. There is no stable
+trivial region. Dashed lines are X_pi=0 point-gap closures, where the
+winding is undefined. Outer existence curves also close the gap at k=0.
+The phi=0,pi edges themselves are excluded from the sampled winding.
+
+Stability is computed from max Im(omega), with resolution 1e-7 J.
+Topology uses the exact determinant-sign criterion. Every sampled trivial
+state is additionally checked to have exactly N growing modes. Selected
+trivial backgrounds are tested in the full scan; one representative
+point is also reconstructed independently in real quadrature
+coordinates for N=8,20,50,80, verifying the norm inequality and the growing
+mode count. The numerical map is finite-resolution: small stability
+features and topological-sector spectra are not high-precision-certified
+at every cell. The exclusion of stable trivial states rests on the proof
+above, not eigenvalue conditioning or cell interpolation.
+
+The map contains 1,609 stable topological, 6,060 unstable topological,
+2,571 unstable trivial, and zero stable trivial samples. There are no
+marginal samples at the stated tolerance. These nonuniform sample counts
+are not geometric phase-space areas.
+
+Reproduce the initial search with `python src/search_stable_trivial.py`
+and the map with `python src/stable_trivial_phase_map.py`. Numerical
+arrays and checks are in `data/generated/stable_trivial/`; PNG and SVG
+figures are in `figures/compensated_stability_topology_detuning3.*`.
+No time-evolution or preparation-success claim is made.
+
+## Cross-Kerr extension: stable trivial intermediate states can exist
+
+Calculated 2026-11-05. The V=0 implication does **not** extend to arbitrary
+nearest-neighbour cross-Kerr coupling. With fixed drive-only endpoint
+compensation, stable, gapped, zero-frequency-trivial intermediate states
+are found at V=2U and V=4U. However, **at V=U every distinct homogeneous
+intermediate state is topological** for 0<phi<pi and kappa>0, independently
+of OBC stability. These two conclusions have different scopes.
+
+### Bulk invariant with cross-Kerr coupling
+
+Keep the onsite U n^2 convention, real couplings, J>0, uniform loss
+gamma=kappa/2, Fourier exp(ikj), and the original forward hopping phase
++phi. A global rotation removes the homogeneous background's pairing
+phase. The bulk dynamical matrix is
+
+$$
+H(k)=[2J\sin\phi\sin k-i\gamma]I+
+\begin{pmatrix}d(k)&b(k)\\-b(k)&-d(k)\end{pmatrix},
+$$
+$$
+d(k)=\Delta+U+(4U+2V)n+2[J\cos\phi+Vn]\cos k,
+\qquad b(k)=2n[U+V\cos k].
+$$
+
+Use the same zero-frequency SVD/extended-chiral invariant as above.
+The imaginary part of det[-H(k)] remains
+-4 gamma J sin(phi) sin(k). For 0<phi<pi, its only real-axis crossings
+are k=0,pi. Put a=Delta+U, h=2J cos(phi), c=a+h and beta=2(U+V).
+The stationary cubic is F(n)=n[(c+beta n)^2+gamma^2]. On its distinct
+intermediate branch F'(n)<0, so
+
+$$
+X_0=[2(U+V)n]^2-\gamma^2-[c+4(U+V)n]^2=-F'(n)>0,
+$$
+$$
+\boxed{X_\pi=[2(U-V)n]^2-\gamma^2-[a+4Un-h]^2.}
+$$
+
+Thus nu(0)=-1 when X_pi<0, nu(0)=0 when X_pi>0, and the point gap
+closes at X_pi=0. The scan below takes U<0 and U+V<0, with c>sqrt(3)gamma,
+so the same turning-density construction identifies the middle root.
+
+For V=U the anomalous Bloch coefficient satisfies b(pi)=0 exactly.
+Consequently X_pi=-gamma^2-[a+4Un-h]^2<0. Combined with X_0>0,
+this proves nonzero winding for every existing distinct intermediate
+state in the stated phase interval. Unlike the V=0 result, this
+equal-coupling statement does not require Delta+U<=sqrt(3)gamma.
+It does not imply stability. The phi endpoints and root mergers still
+require separate point-gap checks.
+
+### Actual compensated OBC operator and why the old proof fails
+
+For each chosen root, alpha=-epsilon/[c+beta n-i gamma], the fixed pumps
+are F_1=epsilon+[J exp(i phi)+Vn]alpha and
+F_N=epsilon+[J exp(-i phi)+Vn]alpha, with uniform interior epsilon.
+Detuning stays uniform. These replace both missing mean-field bond forces.
+
+With open adjacency C and coordination z_j=sum_k C_jk, the pairing-phase
+rotated OBC blocks are
+
+$$
+A=T+VnC+\operatorname{diag}(a+4Un+z_jVn-i\gamma),
+\qquad B=2UnI+VnC.
+$$
+
+The edge coordination is one, not two. Additive pump compensation has
+zero derivative and does not restore missing Hartree derivatives or
+intersite fluctuation couplings. No endpoint-detuning compensation is
+used in these results.
+
+The V=0 proof relied on a scalar uniform pairing gI and the bound
+g^2-gamma^2>||D||^2. For V nonzero, pairing is a matrix with intersite
+terms, while the normal block also acquires boundary-dependent diagonal
+terms. The endpoint determinant signs no longer imply that scalar norm
+bound, and the decoupled blocks in the previous homotopy no longer have
+fixed real parts +/-g-gamma. Hence that proof cannot be reused by simply
+replacing U by U+V. The counterexamples below show this is a physical
+failure of the universal implication, not merely a missing proof.
+
+### Numerical survey and verified counterexamples
+
+Use U=-0.0002, J=1; V/U in {1,0.5,2,4,-0.5}; bare detunings
+{0,0.5,1,3}; losses {0.1,1,2}; and 18 phases from 5 to 175 degrees.
+For each existence interval sample density fractions
+{0.00001,0.001,0.01,0.1,0.3,0.5,0.7,0.9,0.99,0.999,0.99999}
+between the turning densities. This explicitly resolves backgrounds
+close to a merger; the initial coarser survey missed the stable trivial
+examples. There are 6,490 intermediate backgrounds and 768 trivial ones.
+Every trivial candidate is tested at both N=20 and N=50: eight are stable
+at N=20, and three at N=50, using growth threshold -1e-7 J.
+
+The determinant-phase winding is independently evaluated on 2048 and
+4096 momenta for all 6,490 backgrounds; both grids match the analytic
+criterion without any mismatch. No trivial intermediate state occurs
+in the V=U subset, consistent with the exact result.
+
+The three verified N=50 counterexamples all have Delta=3, kappa=J=1,
+U=-0.0002, V<0, uniform loss, and the drive compensation specified above:
+
+| V/U | phi | epsilon/J | Intermediate n | X_0 | X_pi | max Im(omega)/J | nu(0) | Sampled bulk singular gap/J |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 2 | 25 degrees | 118.72855520 | 1358.63194378 | 0.0002987883 | 0.03528507 | -0.01181816 | 0 | 0.0000916353 |
+| 4 | 35 degrees | 87.09583756 | 786.62741518 | 0.0002768240 | 0.10493905 | -0.02610627 | 0 | 0.0000879806 |
+| 4 | 35 degrees | 87.09571696 | 788.13107167 | 0.02765500 | 0.11010892 | -0.01123068 | 0 | 0.00879688 |
+
+These are interior intermediate roots, not the marginal merger itself.
+The respective density fractions are 0.00001, 0.00001, and 0.001.
+Both the point gaps and the negative OBC growth margins are strict;
+continuity therefore gives neighborhoods of stable trivial states at
+fixed finite N. Their width is not quantified by this coarse survey.
+The third example is farther from the merger and has a larger point gap.
+
+For every example the actual complex compensated stationary force is
+below 1.5e-14 J. Full mean-field Jacobian spectra agree with the separately
+constructed pairing-phase-rotated matrices. Leading eigenvalue condition
+numbers at N=50 are approximately 3.35, 17.11 and 12.85; eigenpair
+residuals are below 7e-15. Winding and 2-by-2 Bloch singular gaps are
+checked again with 8192 and 16384 momenta.
+
+Most importantly, an independent site-interleaved real-quadrature
+characteristic polynomial is evaluated at **100 and 160 decimal digits**.
+Trigonometric functions and the intermediate density are recomputed at
+high precision from the stated density fraction. Routh counts find zero
+roots to the right of generator growth shifts -0.0001, 0, and +0.0001
+at both precisions for all three N=50 states. This verifies strict
+stability independently of an unstructured double-precision eigensolver;
+it is a precision-refined numerical check, not an interval certificate.
+
+Finite size matters. The first V=2U example has computed growth rates
+-0.256453, -0.060179, -0.011818 and -0.000601 J for N=8,20,50,80.
+The farther-from-merger V=4U example has rates -0.199977, -0.093099,
+-0.011231 and +0.016206 J at those sizes: it is unstable at N=80.
+The high-precision counts above certify the numerical conclusion at
+N=50 only; no infinite-size stable trivial phase is claimed.
+
+PBC remains unstable at k=0 because X_0=-F'(n)>0. Thus these are genuine
+finite-OBC stabilization examples with zero bulk winding at omega_ref=0.
+We have not checked topology at every other reference frequency, nor
+preparation from vacuum, basins, disorder robustness or nonlinear
+time evolution. No covariance feedback is used.
+
+### Files and conclusion
+
+Run `python src/cross_kerr_trivial_search.py` and then
+`python src/verify_cross_kerr_trivial.py`. Parameters, complete search
+records, winding checks and high-precision validations are stored in
+`data/generated/cross_kerr_trivial/{search.json,bulk.npz,verified.json}`.
+
+The outcome is: **V=U enforces topological intermediate states, but
+general V nonzero admits stable trivial intermediate states under the
+specified finite-OBC compensation protocol.** Absence of counterexamples
+in another sampled ratio is not a theorem for that ratio.
+
+## Phase diagram resolving the stable trivial cross-Kerr region
+
+![Full phi-drive diagram and close-up of the stable trivial compensated intermediate region](../figures/cross_kerr_stable_trivial_phase_map.png)
+
+This figure fixes N=50, J=kappa=1, Delta=3, U=-0.0002 and V=4U,
+using the same homogeneous intermediate background and drive-only endpoint
+compensation as the verified counterexamples above. The horizontal axis
+is the actual drive epsilon/J and the vertical axis is phi in degrees.
+The invariant is the bulk determinant winding at omega_ref=0; stability
+is that of the full finite OBC BdG operator, including degree-one edge
+Hartree terms and both normal and anomalous intersite cross-Kerr terms.
+
+Purple denotes stable, topologically trivial intermediate states. Green
+denotes stable topological states; orange and blue denote unstable
+topological and trivial states, respectively. Grey means that no distinct
+intermediate root exists. Each background has its own fixed compensation
+fields; this is not a scan with a single pair of endpoint drives held fixed.
+
+The full diagram samples 120 phase rows in (0,pi) and a nonuniform density
+grid concentrated near both branch mergers. Dashed lines mark zero-frequency
+point-gap closures. A gold star locates the previously verified state at
+phi=35 degrees, epsilon/J=87.09571696 and n=788.13107167.
+
+The right panel resolves a small neighborhood of that state, over
+34.9995 to 35.0005 degrees and drives 87.0948 to 87.0965. It uses 80 phase
+rows and 64 density fractions between zero and 0.004 of the interval
+between the two turning densities. The curved density mesh is mapped
+directly into phi and epsilon. Solid black is the exact upper-drive
+root-merger curve; there the intermediate root ceases to be distinct and
+the point gap closes. The dotted line is the refined zero-growth OBC
+boundary. The purple strip between them has strictly negative growth
+and nu(0)=0. Its narrowness explains why a broad plot or coarse drive grid
+can miss it. No topological transition occurs across the dotted boundary.
+
+At exactly phi=35 degrees the resolved stable trivial interval is
+approximately 87.09548586 < epsilon/J < 87.09583757, of width
+0.00035171. The lower endpoint is the marginal zero-growth boundary;
+the upper endpoint is the root merger, so neither is included in the
+strict stable, distinct-root claim. The close-up shading follows these
+refined boundary curves, sampled at 41 phases, and agrees with the
+independent 80-by-64 classification grid.
+
+The growth tolerance is 1e-7 J. The stability boundary is refined in the
+density fraction with Brent tolerance 1e-12, separately from the exact
+stationary-fold curve. At phi=34.9996, 35 and 35.0004 degrees, fraction
+0.001, the complex compensated stationary residual, winding on 8192 and
+16384 momenta, and independent 100/160-digit growing-mode counts are
+checked. The root counts verify stability with a margin exceeding
+0.0001 J at these interior points. These selected precision checks do
+not certify every colored cell or every last digit of the boundary.
+
+This establishes a finite-N locally stable trivial region, not preparation
+from vacuum, a basin size, robustness to drive errors or a thermodynamic
+stable phase. As recorded above, the starred background becomes unstable
+at N=80. The large overview is a finite-resolution map; its purpose is
+context, while the right panel resolves the demonstrated region.
+
+Reproduce with `python src/cross_kerr_stable_trivial_map.py`. Full and
+zoom arrays, refined boundary points, and selected verification records
+are saved in `data/generated/cross_kerr_trivial/map/`. PNG and vector
+SVG versions are saved as `figures/cross_kerr_stable_trivial_phase_map.*`.
+
+## Size scaling: does the trivial stable window survive longer chains?
+
+![Size dependence of the stable drive interval, fixed-background growth, and fold-limit growth](../figures/cross_kerr_size_scaling.png)
+
+**The demonstrated trivial interval collapses with increasing chain length,
+while a topological comparison retains a broad interval and a finite negative
+growth rate through N=200.** This supports the proposed distinction for these
+parameter slices. It is not a theorem that topology is necessary for
+thermodynamic stability at general V nonzero.
+
+### Protocol and quantities compared
+
+Keep J=kappa=1, Delta=3, U=-0.0002 and V=4U. Compare phi=35 degrees
+(trivial) with phi=130 degrees (topological), using the same drive-only OBC
+compensation and degree-one endpoint Hartree terms described above. For each
+chosen background, its density, bulk drive, and endpoint compensation fields
+are independent of N. Changing N therefore changes the fluctuation spectrum
+without changing the stationary background. When scanning density at fixed N,
+the compensation is recalculated for each target, then held fixed during
+linearization; it is not dynamical feedback.
+
+Parameterize the intermediate density as
+
+$$
+n(f)=n_-+f(n_+-n_-),\qquad 0<f<1,
+$$
+
+where n_- and n_+ are the lower and upper turning densities. The branch
+merger f=0 is excluded from all claims about distinct intermediate solutions.
+The first panel follows the stable component adjoining this merger and plots
+its actual drive width. The second panel keeps f=0.001 on the trivial slice
+and f=0.1 on the topological slice. The third shows the limiting growth as
+f approaches zero from above, a diagnostic for the disappearance of that
+component. Lines connect discrete sizes; no monotonicity theorem in N is
+assumed.
+
+The two fixed backgrounds are:
+
+| phi | f | n | epsilon/J | nu(0) | Sampled bulk singular gap/J |
+|---:|---:|---:|---:|---:|---:|
+| 35 degrees | 0.001 | 788.13107167 | 87.09571696 | 0 | 0.00879688 |
+| 130 degrees | 0.1 | 374.15752982 | 21.03857099 | -1 | 0.20301933 |
+
+The invariant refers to the zero-frequency bulk point gap, not a finite-chain
+eigenvalue count. Along the distinct intermediate roots of these two slices,
+the analytic X_pi criterion keeps the respective windings zero and minus one.
+In particular, the trivial state's change of stability with N occurs without
+a change of bulk topology. With the time convention i dot(z)=L z, a mode
+evolves as exp(-i omega t), so growth is g_N=max Im(omega) and strict linear
+stability requires g_N<0.
+
+### Numerical results
+
+| N | Trivial drive width/J | Topological drive width/J | g_N/J, fixed trivial state | g_N/J, fixed topological state |
+|---:|---:|---:|---:|---:|
+| 20 | 0.0078776 | 0.86137 | -0.093099 | -0.144462 |
+| 50 | 0.00035171 | 0.74424 | -0.011231 | -0.123247 |
+| 80 | 0.00000037335 | 0.70968 | +0.016206 | -0.118218 |
+| 81 | 0 | 0.70837 | +0.016395 | -0.117989 |
+| 100 | 0 | 0.69765 | +0.026348 | -0.116511 |
+| 160 | 0 | 0.68064 | +0.041892 | -0.114162 |
+| 200 | 0 | 0.67511 to 0.67522 | +0.046728 | -0.113370 |
+
+A zero width means the stable component **touching the lower-density fold**
+is absent, not that all possible detached stable intervals have been excluded.
+The full size list is 20,35,50,65,75,80,81,82,84,90,100,128,160,200.
+
+At phi=35 degrees, the limiting growth at the fold changes from approximately
+-0.000921005 J at N=80 to +0.000080933 J at N=81. Both signs are verified at
+two decimal precisions. Positive limiting growth excludes a stable interval
+adjoining that fold by continuity. The fold limit stays unstable at all
+subsequently sampled sizes, reaching +0.030234 J at N=200. The stable trivial
+drive width shrinks by about a factor of 942 from N=50 to N=80, then this
+component is absent at N=81. This does not assert that every integer size
+above 81 has been checked.
+
+For the topological slice, the first instability is near f=0.225150 at N=50
+and is bracketed by 0.21365448 < f_c < 0.21367402 at N=200. At the largest
+size, additional distinct states at f=0.05 and f=0.15 have growth rates
+approximately -0.177877 J and -0.058947 J, respectively. The retained interval
+is therefore not solely a phenomenon arbitrarily close to the merger. Its
+drive width at N=200 is about 91 percent of its N=50 value. No infinite-size
+width or growth rate is inferred by fitting these finite-size data.
+
+### Why the drive window is especially narrow
+
+Define c=Delta+U+2 cos(phi), beta=2(U+V)<0, gamma=kappa/2 and
+R=sqrt(c^2-3 gamma^2). The stationary cubic gives the exact identity
+
+$$
+\epsilon_{\rm fold}-\epsilon(f)=
+\frac{-4R^3 f^2(3-2f)}
+{27\beta[\epsilon_{\rm fold}+\epsilon(f)]}.
+$$
+
+Consequently, a near-fold stable density interval ending at f_c has
+Delta epsilon proportional to f_c squared to leading order. Narrowness in
+drive alone is not evidence of a small dynamical stability margin. Here the
+separately computed growth rates establish the loss of stability with size.
+The derivation and the assumptions behind a local growth-rate expansion are
+in [cross_kerr_fold_window_scaling.md](../derivations/cross_kerr_fold_window_scaling.md).
+
+### Numerical checks and limitations
+
+Stationary residuals for the two fixed backgrounds are below 1.5e-14 J;
+the actual complex mean-field Jacobian and independently phase-rotated BdG
+operator agree at N=50. Winding and bulk singular gaps agree on 8192 and
+16384 momenta. There are no Gaussian covariance corrections.
+
+The site-interleaved real time generator is reconstructed with Decimal
+trigonometric functions and a freshly computed stationary density. Its banded
+characteristic polynomial and Routh counts test roots to the right of
+growth shifts -1e-7, 0 and +1e-7 J, using N+80 decimal digits. Growth rates
+are bracketed to at most 2e-6 J by root counts. Selected checks use N+140
+digits, reaching 340 digits at N=200; their counts agree and their growth
+brackets overlap. The N=200 topological boundary is checked on both sides
+at both 280 and 340 digits. Three interior fractions of each nonempty
+inferred interval at N=50,80,200 also have zero growing-mode count.
+
+Where reliable, double-precision eigenvalues propose a boundary with Brent
+tolerance 1e-11 in f, and high-precision counts check its two sides.
+Trivial boundary brackets have width 2e-8 in f; topological brackets have
+width at most 2e-6 through N=160 and approximately 1.95e-5 at N=200. Failed
+double-precision brackets are replaced by root-count bisection. The last
+size uses continuation of the previously verified boundary. These are
+precision-refined numerical results, not interval-arithmetic certificates
+of every point in a continuous parameter interval.
+
+The precision check is essential: at N=200, phi=130 degrees and f=0.15,
+an unstructured double-precision eigensolver returns growth +0.028267 J,
+whereas the 340-digit calculation brackets it between -0.05894785 and
+-0.05894661 J. The plot uses the root-count-verified growth brackets,
+not that spurious instability. At f=0.1, the growth bracket agrees at
+280 and 340 digits. Small eigenpair residuals alone would not resolve
+this non-Hermitian spectral sensitivity.
+
+### Interpretation and reproducibility
+
+These results strengthen the hypothesis that topology is associated with
+OBC stabilization that persists over substantial parameter intervals as
+chains grow, whereas the demonstrated trivial counterexample relies on
+finite length. They do not establish a causal or universal necessity claim:
+the comparison changes hopping phase and hence other bulk coefficients,
+only two slices and finite sizes are studied, and detached stable trivial
+regions elsewhere are not excluded. The finite-N trivial counterexamples
+remain valid. Topology is also not sufficient for stability: on the
+topological slice, increasing f past the OBC instability boundary leaves
+the winding unchanged.
+
+A finite negative eigenvalue growth rate is a statement about asymptotic
+linear stability for the specified operator. It does not imply a large
+nonlinear basin, weak transient amplification, or robustness against errors
+in the compensation drives. Those questions are separate from the drive
+width measured here. Establishing the proposed thermodynamic distinction
+requires further analysis of the infinite-chain OBC spectrum and instability
+mechanism, beyond this size comparison.
+
+Reproduce with `python src/cross_kerr_size_scaling.py`, or use
+`notebooks/cross_kerr_size_scaling.ipynb` to run the cached workflow and display
+the table and figure. Numerical records, precision checks and `summary.json`
+are stored in `data/generated/cross_kerr_trivial/size_scaling/`; PNG and SVG
+plots are `figures/cross_kerr_size_scaling.*`. The script reuses the Decimal
+generator factored out of `src/verify_cross_kerr_trivial.py`; the original
+counterexample verification interface is preserved and was checked again.
